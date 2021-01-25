@@ -1319,35 +1319,12 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
         <string>ALIMENTO</string>
        </attribute>
-       <widget class="QWidget" name="widget_2" native="true">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>190</y>
-          <width>391</width>
-          <height>161</height>
-         </rect>
-        </property>
-        <widget class="QLabel" name="label_22">
-         <property name="geometry">
-          <rect>
-           <x>80</x>
-           <y>80</y>
-           <width>261</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>GRAFICA COMPRA VS TIEMPO</string>
-         </property>
-        </widget>
-       </widget>
        <widget class="QFrame" name="frame_5">
         <property name="geometry">
          <rect>
@@ -1687,28 +1664,25 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <zorder>lineEdit_12</zorder>
         <zorder>lineEdit_13</zorder>
        </widget>
-       <widget class="QWidget" name="widget_8" native="true">
+       <widget class="PlotWidget" name="graphicsView_4">
         <property name="geometry">
          <rect>
           <x>20</x>
           <y>190</y>
           <width>391</width>
-          <height>161</height>
+          <height>151</height>
          </rect>
         </property>
-        <widget class="QLabel" name="label_49">
-         <property name="geometry">
-          <rect>
-           <x>40</x>
-           <y>90</y>
-           <width>261</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="text">
-          <string>GRAFICA CONSUMO VS TIEMPO</string>
-         </property>
-        </widget>
+       </widget>
+       <widget class="PlotWidget" name="graphicsView_5">
+        <property name="geometry">
+         <rect>
+          <x>430</x>
+          <y>190</y>
+          <width>391</width>
+          <height>151</height>
+         </rect>
+        </property>
        </widget>
       </widget>
       <widget class="QWidget" name="tab_8">
@@ -1823,39 +1797,6 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <property name="text">
          <string>DAR DE BAJA</string>
         </property>
-       </widget>
-       <widget class="QWidget" name="widget" native="true">
-        <property name="geometry">
-         <rect>
-          <x>20</x>
-          <y>110</y>
-          <width>391</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Andale Mono</family>
-         </font>
-        </property>
-        <widget class="QLabel" name="label_21">
-         <property name="geometry">
-          <rect>
-           <x>50</x>
-           <y>100</y>
-           <width>291</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Andale Mono</family>
-          </font>
-         </property>
-         <property name="text">
-          <string>GRAFICA MORTALIDAD vs ULTMOS 7 DIAS</string>
-         </property>
-        </widget>
        </widget>
        <widget class="QLabel" name="label_46">
         <property name="geometry">
@@ -1990,39 +1931,6 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <string>GALLINAS : </string>
         </property>
        </widget>
-       <widget class="QWidget" name="widget_7" native="true">
-        <property name="geometry">
-         <rect>
-          <x>440</x>
-          <y>110</y>
-          <width>391</width>
-          <height>241</height>
-         </rect>
-        </property>
-        <property name="font">
-         <font>
-          <family>Andale Mono</family>
-         </font>
-        </property>
-        <widget class="QLabel" name="label_48">
-         <property name="geometry">
-          <rect>
-           <x>30</x>
-           <y>100</y>
-           <width>341</width>
-           <height>20</height>
-          </rect>
-         </property>
-         <property name="font">
-          <font>
-           <family>Andale Mono</family>
-          </font>
-         </property>
-         <property name="text">
-          <string>GRAFICA DE RENDIMIENTO ULTIMOS 7 DIAS</string>
-         </property>
-        </widget>
-       </widget>
        <widget class="QLineEdit" name="lineEdit_15">
         <property name="geometry">
          <rect>
@@ -2041,21 +1949,41 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <string notr="true">background-color: rgb(238, 238, 236);</string>
         </property>
        </widget>
+       <widget class="PlotWidget" name="graphicsView_2">
+        <property name="geometry">
+         <rect>
+          <x>20</x>
+          <y>110</y>
+          <width>391</width>
+          <height>231</height>
+         </rect>
+        </property>
+       </widget>
+       <widget class="PlotWidget" name="graphicsView_3">
+        <property name="geometry">
+         <rect>
+          <x>440</x>
+          <y>110</y>
+          <width>391</width>
+          <height>231</height>
+         </rect>
+        </property>
+       </widget>
        <zorder>pushButton_11</zorder>
        <zorder>label_44</zorder>
        <zorder>label_45</zorder>
        <zorder>comboBox_11</zorder>
        <zorder>pushButton_12</zorder>
-       <zorder>widget</zorder>
        <zorder>progressBar</zorder>
        <zorder>label_51</zorder>
        <zorder>label_53</zorder>
        <zorder>label_52</zorder>
-       <zorder>widget_7</zorder>
        <zorder>lineEdit_15</zorder>
        <zorder>label_46</zorder>
        <zorder>progressBar_2</zorder>
        <zorder>label_50</zorder>
+       <zorder>graphicsView_2</zorder>
+       <zorder>graphicsView_3</zorder>
       </widget>
       <widget class="QWidget" name="tab_9">
        <attribute name="title">
@@ -2475,6 +2403,13 @@ background-color: rgb(238, 238, 236);</string>
   </widget>
   <widget class="QStatusBar" name="statusbar"/>
  </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PlotWidget</class>
+   <extends>QGraphicsView</extends>
+   <header>pyqtgraph</header>
+  </customwidget>
+ </customwidgets>
  <resources/>
  <connections/>
 </ui>
