@@ -1202,7 +1202,7 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="text">
-       <string>DEUDAS</string>
+       <string>DEUDA A AGRO CAMPO</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1319,7 +1319,7 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
