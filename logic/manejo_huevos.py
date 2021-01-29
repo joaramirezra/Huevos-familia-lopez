@@ -22,12 +22,10 @@ def inicializar_inventario():
 def agregar_al_registro(galpon,tipo,*valores):
     tipo_gallina = tipo_de_gallina[galpon]
     tipo_huevo = tipos_huevo[tipo]
-    valores
-    linea = crear_linea_con_fecha(tipo_gallina,tipo_huevo,*valores)
-    print(linea)
-	# df = pd.read_csv("./files/inventario_huevos.csv",sep=';')
-    # df.append()
-	# df.to_csv("./files/inventario_huevos.csv",sep=';')
+    linea = crear_linea_con_fecha(tipo_gallina,tipo_huevo,*valores).split(';')
+	df = pd.read_csv("./files/inventario_huevos.csv",sep=';')
+	df.append()
+	df.to_csv("./files/inventario_huevos.csv",sep=';')
 
 def obtener_inventario():
 	df = pd.read_csv("./files/inventario_huevos.csv",sep=';')
