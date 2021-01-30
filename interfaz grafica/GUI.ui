@@ -1017,7 +1017,7 @@ background-color: rgb(238, 238, 236);</string>
         </font>
        </property>
        <property name="text">
-        <string>VENTAS ULTIMOS 7 DIAS</string>
+        <string>ACUMULADAS</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
@@ -1169,9 +1169,9 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QLabel" name="label_14">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>10</y>
-        <width>301</width>
+        <width>261</width>
         <height>41</height>
        </rect>
       </property>
@@ -1190,9 +1190,9 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QLabel" name="label_15">
       <property name="geometry">
        <rect>
-        <x>620</x>
+        <x>610</x>
         <y>10</y>
-        <width>231</width>
+        <width>261</width>
         <height>41</height>
        </rect>
       </property>
@@ -1208,33 +1208,12 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_16">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>10</y>
-        <width>291</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>CUPO DE ENDEUDAMIENTO</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_17">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>20</x>
         <y>40</y>
-        <width>301</width>
+        <width>261</width>
         <height>41</height>
        </rect>
       </property>
@@ -1257,9 +1236,9 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QLabel" name="label_18">
       <property name="geometry">
        <rect>
-        <x>620</x>
+        <x>610</x>
         <y>40</y>
-        <width>231</width>
+        <width>261</width>
         <height>41</height>
        </rect>
       </property>
@@ -1271,31 +1250,6 @@ background-color: rgb(238, 238, 236);</string>
       </property>
       <property name="styleSheet">
        <string notr="true">color: rgb(204, 0, 0);</string>
-      </property>
-      <property name="text">
-       <string>8'541.005 PESOS</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_19">
-      <property name="geometry">
-       <rect>
-        <x>320</x>
-        <y>40</y>
-        <width>291</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">color: rgb(1, 72, 138);</string>
       </property>
       <property name="text">
        <string>8'541.005 PESOS</string>
@@ -1737,7 +1691,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
        <widget class="PlotWidget" name="graphicsView_4">
         <property name="geometry">
          <rect>
-          <x>460</x>
+          <x>470</x>
           <y>10</y>
           <width>361</width>
           <height>161</height>
@@ -1747,7 +1701,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
        <widget class="PlotWidget" name="graphicsView_5">
         <property name="geometry">
          <rect>
-          <x>460</x>
+          <x>470</x>
           <y>180</y>
           <width>361</width>
           <height>161</height>
@@ -2443,6 +2397,52 @@ background-color: rgb(238, 238, 236);</string>
         </property>
        </widget>
       </widget>
+     </widget>
+     <widget class="QLabel" name="label_16">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>11</y>
+        <width>271</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Andale Mono</family>
+       </font>
+      </property>
+      <property name="text">
+       <string>CUPO DE ENDEUDAMIENTO</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_19">
+      <property name="geometry">
+       <rect>
+        <x>310</x>
+        <y>40</y>
+        <width>271</width>
+        <height>41</height>
+       </rect>
+      </property>
+      <property name="font">
+       <font>
+        <family>Andale Mono</family>
+        <pointsize>18</pointsize>
+       </font>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">color: rgb(1, 72, 138);</string>
+      </property>
+      <property name="text">
+       <string>8'541.005 PESOS</string>
+      </property>
+      <property name="alignment">
+       <set>Qt::AlignCenter</set>
+      </property>
      </widget>
     </widget>
    </widget>
