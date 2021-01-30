@@ -1,11 +1,12 @@
 archivos = {
-	'caja_menor':'fecha;ffectivo;Deuda;Cupo',
-	'ventas':'Fecha,unidades,cubetas,sobrantes,precio_total',
-	'compras':'Fecha,unidades,cubetas,sobrantes,precio_total',
-	'inventario_alimento_y_costales': 'fecha;cantidad_bultos;cantidad_costales',
-	'inventario_huevos':'fecha;tipo_gallina;unidades;cubetas;sobrantes',
-	'historico_invetario_diario': 'fecha;tipo_gallina;unidades;cubetas;sobrantes;total_nuevos',
-	'invetario_diario': 'fecha;tipo_gallina;tipo;unidades;cubetas;sobrantes',
+	'compras'       : 'fecha;motivo;precio',
+	'credito'       : 'fecha;motivo;precio',
+	'venta_empaque' : 'fecha;cantidad;precio',
+	'gasto_alimento': 'fecha;galpon;cantidad',
+	'caja_mayor'    : 'fecha;motivo;cantidad_dinero',
+	'manejo_galpon' : 'fecha;cantidad_pollitas;cantidad_gallinas',
+	'ingreso_huevos': 'fecha;galpon;tipo;unidades;cubeta;sobrantes',
+	'venta_huevos'  : 'fecha;tipo;unidades;cubeta;sobrantes;precio;observacion',
 }
 
 #------------------------------------------------------------------------------
