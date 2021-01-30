@@ -1202,7 +1202,7 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="text">
-       <string>DEUDA A AGRO CAMPO</string>
+       <string>DEUDA A AGRO PAISA </string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -1319,7 +1319,7 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="currentIndex">
-       <number>2</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_7">
        <attribute name="title">
@@ -1330,7 +1330,7 @@ background-color: rgb(238, 238, 236);</string>
          <rect>
           <x>20</x>
           <y>10</y>
-          <width>311</width>
+          <width>421</width>
           <height>161</height>
          </rect>
         </property>
@@ -1343,7 +1343,7 @@ background-color: rgb(238, 238, 236);</string>
         <widget class="QTableWidget" name="tableWidget_4">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>70</x>
            <y>20</y>
            <width>291</width>
            <height>51</height>
@@ -1374,16 +1374,16 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          </column>
          <column>
           <property name="text">
-           <string>COSTALES</string>
+           <string>EMPAQUES</string>
           </property>
          </column>
         </widget>
         <widget class="QPushButton" name="pushButton_15">
          <property name="geometry">
           <rect>
-           <x>180</x>
+           <x>220</x>
            <y>110</y>
-           <width>121</width>
+           <width>91</width>
            <height>41</height>
           </rect>
          </property>
@@ -1402,9 +1402,9 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QLabel" name="label_55">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>110</x>
            <y>80</y>
-           <width>291</width>
+           <width>101</width>
            <height>41</height>
           </rect>
          </property>
@@ -1414,7 +1414,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           </font>
          </property>
          <property name="text">
-          <string>BULTO DE ALIMENTO</string>
+          <string>BULTOS</string>
          </property>
          <property name="alignment">
           <set>Qt::AlignCenter</set>
@@ -1423,9 +1423,9 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QLineEdit" name="lineEdit_14">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>110</x>
            <y>110</y>
-           <width>151</width>
+           <width>101</width>
            <height>41</height>
           </rect>
          </property>
@@ -1433,17 +1433,87 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string notr="true">background-color: rgb(238, 238, 236);</string>
          </property>
         </widget>
+        <widget class="QPushButton" name="pushButton_20">
+         <property name="geometry">
+          <rect>
+           <x>320</x>
+           <y>110</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Andale Mono</family>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(236, 201, 199);</string>
+         </property>
+         <property name="text">
+          <string>DEVOLVER</string>
+         </property>
+        </widget>
+        <widget class="QComboBox" name="comboBox_12">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>110</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Andale Mono</family>
+          </font>
+         </property>
+         <item>
+          <property name="text">
+           <string>POLLITA</string>
+          </property>
+         </item>
+         <item>
+          <property name="text">
+           <string>GALLINA</string>
+          </property>
+         </item>
+        </widget>
+        <widget class="QLabel" name="label_48">
+         <property name="geometry">
+          <rect>
+           <x>10</x>
+           <y>80</y>
+           <width>91</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Andale Mono</family>
+          </font>
+         </property>
+         <property name="text">
+          <string>GALPON</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+        <zorder>label_48</zorder>
         <zorder>label_55</zorder>
         <zorder>tableWidget_4</zorder>
         <zorder>pushButton_15</zorder>
         <zorder>lineEdit_14</zorder>
+        <zorder>pushButton_20</zorder>
+        <zorder>comboBox_12</zorder>
        </widget>
        <widget class="QFrame" name="frame_6">
         <property name="geometry">
          <rect>
-          <x>350</x>
-          <y>10</y>
-          <width>471</width>
+          <x>20</x>
+          <y>180</y>
+          <width>421</width>
           <height>161</height>
          </rect>
         </property>
@@ -1456,7 +1526,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QPushButton" name="pushButton_13">
          <property name="geometry">
           <rect>
-           <x>270</x>
+           <x>220</x>
            <y>110</y>
            <width>191</width>
            <height>41</height>
@@ -1477,7 +1547,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QPushButton" name="pushButton_14">
          <property name="geometry">
           <rect>
-           <x>370</x>
+           <x>320</x>
            <y>30</y>
            <width>91</width>
            <height>41</height>
@@ -1498,7 +1568,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QLabel" name="label_40">
          <property name="geometry">
           <rect>
-           <x>10</x>
+           <x>0</x>
            <y>80</y>
            <width>101</width>
            <height>41</height>
@@ -1540,7 +1610,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QPushButton" name="pushButton_9">
          <property name="geometry">
           <rect>
-           <x>270</x>
+           <x>220</x>
            <y>30</y>
            <width>91</width>
            <height>41</height>
@@ -1561,7 +1631,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QLabel" name="label_38">
          <property name="geometry">
           <rect>
-           <x>140</x>
+           <x>100</x>
            <y>10</y>
            <width>101</width>
            <height>21</height>
@@ -1582,7 +1652,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QLabel" name="label_47">
          <property name="geometry">
           <rect>
-           <x>140</x>
+           <x>90</x>
            <y>80</y>
            <width>101</width>
            <height>41</height>
@@ -1605,7 +1675,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <rect>
            <x>10</x>
            <y>30</y>
-           <width>101</width>
+           <width>91</width>
            <height>41</height>
           </rect>
          </property>
@@ -1618,7 +1688,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <rect>
            <x>10</x>
            <y>110</y>
-           <width>101</width>
+           <width>91</width>
            <height>41</height>
           </rect>
          </property>
@@ -1629,9 +1699,9 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QLineEdit" name="lineEdit_12">
          <property name="geometry">
           <rect>
-           <x>130</x>
+           <x>110</x>
            <y>30</y>
-           <width>121</width>
+           <width>101</width>
            <height>41</height>
           </rect>
          </property>
@@ -1642,9 +1712,9 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <widget class="QLineEdit" name="lineEdit_13">
          <property name="geometry">
           <rect>
-           <x>130</x>
+           <x>110</x>
            <y>110</y>
-           <width>121</width>
+           <width>101</width>
            <height>41</height>
           </rect>
          </property>
@@ -1652,13 +1722,13 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string notr="true">background-color: rgb(238, 238, 236);</string>
          </property>
         </widget>
+        <zorder>label_47</zorder>
         <zorder>label_38</zorder>
         <zorder>pushButton_13</zorder>
         <zorder>pushButton_14</zorder>
         <zorder>label_40</zorder>
         <zorder>label_39</zorder>
         <zorder>pushButton_9</zorder>
-        <zorder>label_47</zorder>
         <zorder>lineEdit_10</zorder>
         <zorder>lineEdit_11</zorder>
         <zorder>lineEdit_12</zorder>
@@ -1667,20 +1737,20 @@ font: 11pt &quot;Andale Mono&quot;;</string>
        <widget class="PlotWidget" name="graphicsView_4">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>190</y>
-          <width>391</width>
-          <height>151</height>
+          <x>460</x>
+          <y>10</y>
+          <width>361</width>
+          <height>161</height>
          </rect>
         </property>
        </widget>
        <widget class="PlotWidget" name="graphicsView_5">
         <property name="geometry">
          <rect>
-          <x>430</x>
-          <y>190</y>
-          <width>391</width>
-          <height>151</height>
+          <x>460</x>
+          <y>180</y>
+          <width>361</width>
+          <height>161</height>
          </rect>
         </property>
        </widget>
