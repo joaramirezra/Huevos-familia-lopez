@@ -6,12 +6,12 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>901</width>
+    <width>914</width>
     <height>586</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Sistema para el control de granja de huevos</string>
   </property>
   <property name="autoFillBackground">
    <bool>false</bool>
@@ -20,7 +20,7 @@
    <string notr="true">background-color: rgb(217, 227, 218);</string>
   </property>
   <widget class="QWidget" name="centralwidget">
-   <widget class="QTabWidget" name="tabWidget">
+   <widget class="QTabWidget" name="tabs">
     <property name="geometry">
      <rect>
       <x>0</x>
@@ -43,11 +43,11 @@
     <property name="currentIndex">
      <number>2</number>
     </property>
-    <widget class="QWidget" name="tab">
+    <widget class="QWidget" name="produccion">
      <attribute name="title">
       <string>PRODUCCION</string>
      </attribute>
-     <widget class="QComboBox" name="comboBox">
+     <widget class="QComboBox" name="tipo_produccion">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -185,7 +185,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_2">
+     <widget class="QComboBox" name="galpon_produccion">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -238,7 +238,7 @@
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton">
+     <widget class="QPushButton" name="boton_agregar_produccion">
       <property name="geometry">
        <rect>
         <x>660</x>
@@ -259,7 +259,7 @@
        <string>AGREGAR</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_2">
+     <widget class="QPushButton" name="boton_eliminar_produccion">
       <property name="geometry">
        <rect>
         <x>770</x>
@@ -323,7 +323,7 @@
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QTableWidget" name="tableWidget">
+      <widget class="QTableWidget" name="tabla_produccion_diaria">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -443,8 +443,68 @@ background-color: rgb(238, 238, 236);</string>
          <string>SOBRANTES</string>
         </property>
        </column>
+       <item row="0" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="1" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="2" column="0">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="2" column="1">
+        <property name="text">
+         <string/>
+        </property>
+       </item>
+       <item row="2" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="3" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="4" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="5" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="6" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="7" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="8" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
+       <item row="9" column="3">
+        <property name="text">
+         <string>########</string>
+        </property>
+       </item>
       </widget>
-      <widget class="QLabel" name="label_5">
+      <widget class="QLabel" name="titulo_pollitas">
        <property name="geometry">
         <rect>
          <x>150</x>
@@ -465,7 +525,7 @@ background-color: rgb(238, 238, 236);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_6">
+      <widget class="QLabel" name="titulo_gallinas">
        <property name="geometry">
         <rect>
          <x>540</x>
@@ -486,9 +546,9 @@ background-color: rgb(238, 238, 236);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <zorder>label_6</zorder>
-      <zorder>label_5</zorder>
-      <zorder>tableWidget</zorder>
+      <zorder>titulo_gallinas</zorder>
+      <zorder>titulo_pollitas</zorder>
+      <zorder>tabla_produccion_diaria</zorder>
      </widget>
      <widget class="QLabel" name="label_24">
       <property name="geometry">
@@ -513,7 +573,7 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_4">
+     <widget class="QLineEdit" name="unidade_produccion">
       <property name="geometry">
        <rect>
         <x>300</x>
@@ -526,7 +586,7 @@ background-color: rgb(238, 238, 236);</string>
        <string notr="true">background-color: rgb(238, 238, 236);</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_5">
+     <widget class="QLineEdit" name="cubetas_produccion">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -539,7 +599,7 @@ background-color: rgb(238, 238, 236);</string>
        <string notr="true">background-color: rgb(238, 238, 236);</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_6">
+     <widget class="QLineEdit" name="sobrantes_produccion">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -556,22 +616,22 @@ background-color: rgb(238, 238, 236);</string>
      <zorder>label</zorder>
      <zorder>label_2</zorder>
      <zorder>label_3</zorder>
-     <zorder>comboBox_2</zorder>
+     <zorder>galpon_produccion</zorder>
      <zorder>label_4</zorder>
      <zorder>label_8</zorder>
      <zorder>frame_2</zorder>
-     <zorder>comboBox</zorder>
-     <zorder>pushButton</zorder>
-     <zorder>pushButton_2</zorder>
-     <zorder>lineEdit_4</zorder>
-     <zorder>lineEdit_5</zorder>
-     <zorder>lineEdit_6</zorder>
+     <zorder>tipo_produccion</zorder>
+     <zorder>boton_agregar_produccion</zorder>
+     <zorder>boton_eliminar_produccion</zorder>
+     <zorder>unidade_produccion</zorder>
+     <zorder>cubetas_produccion</zorder>
+     <zorder>sobrantes_produccion</zorder>
     </widget>
-    <widget class="QWidget" name="tab_3">
+    <widget class="QWidget" name="ventas">
      <attribute name="title">
       <string>VENTAS</string>
      </attribute>
-     <widget class="QPushButton" name="pushButton_3">
+     <widget class="QPushButton" name="boton_venta">
       <property name="geometry">
        <rect>
         <x>660</x>
@@ -592,7 +652,7 @@ background-color: rgb(238, 238, 236);</string>
        <string>VENTA</string>
       </property>
      </widget>
-     <widget class="QPushButton" name="pushButton_4">
+     <widget class="QPushButton" name="boton_devolucion">
       <property name="geometry">
        <rect>
         <x>770</x>
@@ -686,7 +746,7 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_3">
+     <widget class="QComboBox" name="tipo_venta">
       <property name="geometry">
        <rect>
         <x>160</x>
@@ -773,7 +833,7 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QComboBox" name="comboBox_4">
+     <widget class="QComboBox" name="presentacion_venta">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -830,7 +890,7 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QTextEdit" name="textEdit_6">
+     <widget class="QTextEdit" name="comentario_venta">
       <property name="geometry">
        <rect>
         <x>540</x>
@@ -873,7 +933,7 @@ p, li { white-space: pre-wrap; }
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QTableWidget" name="tableWidget_2">
+      <widget class="QTableWidget" name="tabla_inventario">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -981,7 +1041,7 @@ background-color: rgb(238, 238, 236);</string>
         </property>
        </column>
       </widget>
-      <widget class="QLabel" name="label_23">
+      <widget class="QLabel" name="titulo_inventario">
        <property name="geometry">
         <rect>
          <x>20</x>
@@ -1002,7 +1062,7 @@ background-color: rgb(238, 238, 236);</string>
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QLabel" name="label_88">
+      <widget class="QLabel" name="titulo_venta_acumulada">
        <property name="geometry">
         <rect>
          <x>600</x>
@@ -1017,13 +1077,13 @@ background-color: rgb(238, 238, 236);</string>
         </font>
        </property>
        <property name="text">
-        <string>ACUMULADAS</string>
+        <string>VENTAS ACUMULADAS</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignCenter</set>
        </property>
       </widget>
-      <widget class="QTableWidget" name="tableWidget_3">
+      <widget class="QTableWidget" name="tabla_acumulada">
        <property name="geometry">
         <rect>
          <x>590</x>
@@ -1117,12 +1177,12 @@ background-color: rgb(238, 238, 236);</string>
         </property>
        </item>
       </widget>
-      <zorder>label_23</zorder>
-      <zorder>label_88</zorder>
-      <zorder>tableWidget_2</zorder>
-      <zorder>tableWidget_3</zorder>
+      <zorder>titulo_inventario</zorder>
+      <zorder>titulo_venta_acumulada</zorder>
+      <zorder>tabla_inventario</zorder>
+      <zorder>tabla_acumulada</zorder>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_2">
+     <widget class="QLineEdit" name="cantidad_venta">
       <property name="geometry">
        <rect>
         <x>300</x>
@@ -1135,7 +1195,7 @@ background-color: rgb(238, 238, 236);</string>
        <string notr="true">background-color: rgb(238, 238, 236);</string>
       </property>
      </widget>
-     <widget class="QLineEdit" name="lineEdit_3">
+     <widget class="QLineEdit" name="precio_venta">
       <property name="geometry">
        <rect>
         <x>420</x>
@@ -1148,21 +1208,21 @@ background-color: rgb(238, 238, 236);</string>
        <string notr="true">background-color: rgb(238, 238, 236);</string>
       </property>
      </widget>
-     <zorder>pushButton_3</zorder>
-     <zorder>pushButton_4</zorder>
+     <zorder>boton_venta</zorder>
+     <zorder>boton_devolucion</zorder>
      <zorder>label_9</zorder>
      <zorder>label_10</zorder>
      <zorder>label_11</zorder>
-     <zorder>comboBox_3</zorder>
+     <zorder>tipo_venta</zorder>
      <zorder>label_12</zorder>
-     <zorder>comboBox_4</zorder>
+     <zorder>presentacion_venta</zorder>
      <zorder>label_13</zorder>
      <zorder>frame</zorder>
-     <zorder>textEdit_6</zorder>
-     <zorder>lineEdit_2</zorder>
-     <zorder>lineEdit_3</zorder>
+     <zorder>comentario_venta</zorder>
+     <zorder>cantidad_venta</zorder>
+     <zorder>precio_venta</zorder>
     </widget>
-    <widget class="QWidget" name="tab_2">
+    <widget class="QWidget" name="gestion">
      <attribute name="title">
       <string>GESTION</string>
      </attribute>
@@ -1208,7 +1268,7 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_17">
+     <widget class="QLabel" name="cantidad_efectivo">
       <property name="geometry">
        <rect>
         <x>20</x>
@@ -1233,7 +1293,7 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_18">
+     <widget class="QLabel" name="cantidad_deuda">
       <property name="geometry">
        <rect>
         <x>610</x>
@@ -1258,10 +1318,10 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QTabWidget" name="tabWidget_2">
+     <widget class="QTabWidget" name="tabs_internas">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>10</x>
         <y>80</y>
         <width>851</width>
         <height>391</height>
@@ -1273,9 +1333,9 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>2</number>
       </property>
-      <widget class="QWidget" name="tab_7">
+      <widget class="QWidget" name="teb_alimento">
        <attribute name="title">
         <string>ALIMENTO</string>
        </attribute>
@@ -1294,7 +1354,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QTableWidget" name="tableWidget_4">
+        <widget class="QTableWidget" name="tabla_inventario_alimento">
          <property name="geometry">
           <rect>
            <x>70</x>
@@ -1332,7 +1392,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           </property>
          </column>
         </widget>
-        <widget class="QPushButton" name="pushButton_15">
+        <widget class="QPushButton" name="boton_gastar_alimento">
          <property name="geometry">
           <rect>
            <x>220</x>
@@ -1374,7 +1434,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_14">
+        <widget class="QLineEdit" name="cantidad_alimento_dado">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -1387,7 +1447,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string notr="true">background-color: rgb(238, 238, 236);</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_20">
+        <widget class="QPushButton" name="boton_devolver_alimento">
          <property name="geometry">
           <rect>
            <x>320</x>
@@ -1408,7 +1468,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string>DEVOLVER</string>
          </property>
         </widget>
-        <widget class="QComboBox" name="comboBox_12">
+        <widget class="QComboBox" name="galpon_alimentado">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1456,11 +1516,11 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         </widget>
         <zorder>label_48</zorder>
         <zorder>label_55</zorder>
-        <zorder>tableWidget_4</zorder>
-        <zorder>pushButton_15</zorder>
-        <zorder>lineEdit_14</zorder>
-        <zorder>pushButton_20</zorder>
-        <zorder>comboBox_12</zorder>
+        <zorder>tabla_inventario_alimento</zorder>
+        <zorder>boton_gastar_alimento</zorder>
+        <zorder>cantidad_alimento_dado</zorder>
+        <zorder>boton_devolver_alimento</zorder>
+        <zorder>galpon_alimentado</zorder>
        </widget>
        <widget class="QFrame" name="frame_6">
         <property name="geometry">
@@ -1477,7 +1537,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         <property name="frameShadow">
          <enum>QFrame::Raised</enum>
         </property>
-        <widget class="QPushButton" name="pushButton_13">
+        <widget class="QPushButton" name="vender_costales">
          <property name="geometry">
           <rect>
            <x>220</x>
@@ -1498,7 +1558,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string>VENDER</string>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_14">
+        <widget class="QPushButton" name="boton_fiar_costales">
          <property name="geometry">
           <rect>
            <x>320</x>
@@ -1519,12 +1579,12 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string>FIAR</string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_40">
+        <widget class="QLabel" name="titulo_costales">
          <property name="geometry">
           <rect>
-           <x>0</x>
+           <x>10</x>
            <y>80</y>
-           <width>101</width>
+           <width>91</width>
            <height>41</height>
           </rect>
          </property>
@@ -1540,12 +1600,12 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="label_39">
+        <widget class="QLabel" name="titulo_bultos">
          <property name="geometry">
           <rect>
            <x>10</x>
            <y>10</y>
-           <width>101</width>
+           <width>91</width>
            <height>21</height>
           </rect>
          </property>
@@ -1561,7 +1621,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QPushButton" name="pushButton_9">
+        <widget class="QPushButton" name="boton_comprar_alimento">
          <property name="geometry">
           <rect>
            <x>220</x>
@@ -1582,10 +1642,10 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string>COMPRAR</string>
          </property>
         </widget>
-        <widget class="QLabel" name="label_38">
+        <widget class="QLabel" name="titulo_precio">
          <property name="geometry">
           <rect>
-           <x>100</x>
+           <x>110</x>
            <y>10</y>
            <width>101</width>
            <height>21</height>
@@ -1603,10 +1663,10 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLabel" name="label_47">
+        <widget class="QLabel" name="titulo_precio_2">
          <property name="geometry">
           <rect>
-           <x>90</x>
+           <x>110</x>
            <y>80</y>
            <width>101</width>
            <height>41</height>
@@ -1624,7 +1684,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_10">
+        <widget class="QLineEdit" name="cantidad_bultos_adquirir">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1637,7 +1697,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string notr="true">background-color: rgb(238, 238, 236);</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_11">
+        <widget class="QLineEdit" name="Cantidad_costales_vender">
          <property name="geometry">
           <rect>
            <x>10</x>
@@ -1650,7 +1710,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string notr="true">background-color: rgb(238, 238, 236);</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_12">
+        <widget class="QLineEdit" name="precio_adquisicion_costal">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -1663,7 +1723,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string notr="true">background-color: rgb(238, 238, 236);</string>
          </property>
         </widget>
-        <widget class="QLineEdit" name="lineEdit_13">
+        <widget class="QLineEdit" name="precio_venta_costal">
          <property name="geometry">
           <rect>
            <x>110</x>
@@ -1676,17 +1736,17 @@ font: 11pt &quot;Andale Mono&quot;;</string>
           <string notr="true">background-color: rgb(238, 238, 236);</string>
          </property>
         </widget>
-        <zorder>label_47</zorder>
-        <zorder>label_38</zorder>
-        <zorder>pushButton_13</zorder>
-        <zorder>pushButton_14</zorder>
-        <zorder>label_40</zorder>
-        <zorder>label_39</zorder>
-        <zorder>pushButton_9</zorder>
-        <zorder>lineEdit_10</zorder>
-        <zorder>lineEdit_11</zorder>
-        <zorder>lineEdit_12</zorder>
-        <zorder>lineEdit_13</zorder>
+        <zorder>titulo_precio_2</zorder>
+        <zorder>titulo_precio</zorder>
+        <zorder>vender_costales</zorder>
+        <zorder>boton_fiar_costales</zorder>
+        <zorder>titulo_costales</zorder>
+        <zorder>titulo_bultos</zorder>
+        <zorder>boton_comprar_alimento</zorder>
+        <zorder>cantidad_bultos_adquirir</zorder>
+        <zorder>Cantidad_costales_vender</zorder>
+        <zorder>precio_adquisicion_costal</zorder>
+        <zorder>precio_venta_costal</zorder>
        </widget>
        <widget class="PlotWidget" name="graphicsView_4">
         <property name="geometry">
@@ -1709,11 +1769,11 @@ font: 11pt &quot;Andale Mono&quot;;</string>
         </property>
        </widget>
       </widget>
-      <widget class="QWidget" name="tab_8">
+      <widget class="QWidget" name="tab_galpones">
        <attribute name="title">
         <string>GALPONES</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_11">
+       <widget class="QPushButton" name="boton_agregar_animales">
         <property name="geometry">
          <rect>
           <x>250</x>
@@ -1776,7 +1836,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QComboBox" name="comboBox_11">
+       <widget class="QComboBox" name="galpon_administrar_animales">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -1801,7 +1861,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          </property>
         </item>
        </widget>
-       <widget class="QPushButton" name="pushButton_12">
+       <widget class="QPushButton" name="boton_dar_baja_animales">
         <property name="geometry">
          <rect>
           <x>390</x>
@@ -1822,7 +1882,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <string>DAR DE BAJA</string>
         </property>
        </widget>
-       <widget class="QLabel" name="label_46">
+       <widget class="QLabel" name="cantidad_pollitas">
         <property name="geometry">
          <rect>
           <x>640</x>
@@ -1858,7 +1918,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <string>POLLITAS :</string>
         </property>
        </widget>
-       <widget class="QProgressBar" name="progressBar_2">
+       <widget class="QProgressBar" name="rendimiento_pollitas">
         <property name="geometry">
          <rect>
           <x>710</x>
@@ -1876,7 +1936,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <number>24</number>
         </property>
        </widget>
-       <widget class="QProgressBar" name="progressBar">
+       <widget class="QProgressBar" name="rendimiento_gallinas">
         <property name="geometry">
          <rect>
           <x>710</x>
@@ -1894,7 +1954,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <number>24</number>
         </property>
        </widget>
-       <widget class="QLabel" name="label_51">
+       <widget class="QLabel" name="cantidad_gallinas">
         <property name="geometry">
          <rect>
           <x>640</x>
@@ -1955,7 +2015,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <string>GALLINAS : </string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_15">
+       <widget class="QLineEdit" name="cantidad_animales_editar">
         <property name="geometry">
          <rect>
           <x>150</x>
@@ -1993,27 +2053,27 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          </rect>
         </property>
        </widget>
-       <zorder>pushButton_11</zorder>
+       <zorder>boton_agregar_animales</zorder>
        <zorder>label_44</zorder>
        <zorder>label_45</zorder>
-       <zorder>comboBox_11</zorder>
-       <zorder>pushButton_12</zorder>
-       <zorder>progressBar</zorder>
-       <zorder>label_51</zorder>
+       <zorder>galpon_administrar_animales</zorder>
+       <zorder>boton_dar_baja_animales</zorder>
+       <zorder>rendimiento_gallinas</zorder>
+       <zorder>cantidad_gallinas</zorder>
        <zorder>label_53</zorder>
        <zorder>label_52</zorder>
-       <zorder>lineEdit_15</zorder>
-       <zorder>label_46</zorder>
-       <zorder>progressBar_2</zorder>
+       <zorder>cantidad_animales_editar</zorder>
+       <zorder>cantidad_pollitas</zorder>
+       <zorder>rendimiento_pollitas</zorder>
        <zorder>label_50</zorder>
        <zorder>graphicsView_2</zorder>
        <zorder>graphicsView_3</zorder>
       </widget>
-      <widget class="QWidget" name="tab_9">
+      <widget class="QWidget" name="caja_menor">
        <attribute name="title">
         <string>CAJA MENOR</string>
        </attribute>
-       <widget class="QPushButton" name="pushButton_16">
+       <widget class="QPushButton" name="boton_abonar">
         <property name="geometry">
          <rect>
           <x>300</x>
@@ -2055,7 +2115,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_17">
+       <widget class="QPushButton" name="boton_retirar">
         <property name="geometry">
          <rect>
           <x>300</x>
@@ -2097,7 +2157,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_18">
+       <widget class="QPushButton" name="boton_comprar_caja_menor">
         <property name="geometry">
          <rect>
           <x>560</x>
@@ -2118,7 +2178,7 @@ font: 11pt &quot;Andale Mono&quot;;</string>
          <string>GASTADO</string>
         </property>
        </widget>
-       <widget class="QTextEdit" name="textEdit_28">
+       <widget class="QTextEdit" name="motivo_gasto">
         <property name="geometry">
          <rect>
           <x>20</x>
@@ -2146,9 +2206,9 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_61">
         <property name="geometry">
          <rect>
-          <x>380</x>
+          <x>400</x>
           <y>10</y>
-          <width>161</width>
+          <width>141</width>
           <height>41</height>
          </rect>
         </property>
@@ -2164,7 +2224,7 @@ p, li { white-space: pre-wrap; }
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_19">
+       <widget class="QPushButton" name="boton_fiar_caja_menor">
         <property name="geometry">
          <rect>
           <x>700</x>
@@ -2188,10 +2248,10 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_60">
         <property name="geometry">
          <rect>
-          <x>180</x>
-          <y>90</y>
-          <width>101</width>
-          <height>41</height>
+          <x>190</x>
+          <y>110</y>
+          <width>91</width>
+          <height>31</height>
          </rect>
         </property>
         <property name="font">
@@ -2302,12 +2362,12 @@ background-color: rgb(238, 238, 236);</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_7">
+       <widget class="QLineEdit" name="abonar_dinero">
         <property name="geometry">
          <rect>
-          <x>180</x>
+          <x>190</x>
           <y>140</y>
-          <width>101</width>
+          <width>91</width>
           <height>41</height>
          </rect>
         </property>
@@ -2315,12 +2375,12 @@ background-color: rgb(238, 238, 236);</string>
          <string notr="true">background-color: rgb(238, 238, 236);</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_8">
+       <widget class="QLineEdit" name="retirar_dinero">
         <property name="geometry">
          <rect>
-          <x>180</x>
+          <x>190</x>
           <y>220</y>
-          <width>101</width>
+          <width>91</width>
           <height>41</height>
          </rect>
         </property>
@@ -2328,7 +2388,7 @@ background-color: rgb(238, 238, 236);</string>
          <string notr="true">background-color: rgb(238, 238, 236);</string>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_9">
+       <widget class="QLineEdit" name="cantidad_dinero_caja">
         <property name="geometry">
          <rect>
           <x>400</x>
@@ -2362,12 +2422,12 @@ background-color: rgb(238, 238, 236);</string>
          <set>Qt::AlignCenter</set>
         </property>
        </widget>
-       <widget class="QLineEdit" name="lineEdit_16">
+       <widget class="QLineEdit" name="ingresar_dinero">
         <property name="geometry">
          <rect>
-          <x>180</x>
+          <x>190</x>
           <y>300</y>
-          <width>101</width>
+          <width>91</width>
           <height>41</height>
          </rect>
         </property>
@@ -2375,7 +2435,7 @@ background-color: rgb(238, 238, 236);</string>
          <string notr="true">background-color: rgb(238, 238, 236);</string>
         </property>
        </widget>
-       <widget class="QPushButton" name="pushButton_29">
+       <widget class="QPushButton" name="boton_invertir_caja_menor">
         <property name="geometry">
          <rect>
           <x>300</x>
@@ -2396,6 +2456,89 @@ background-color: rgb(238, 238, 236);</string>
          <string>INGRESAR</string>
         </property>
        </widget>
+       <widget class="QLabel" name="label_62">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>200</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Andale Mono</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>DINERO </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_63">
+        <property name="geometry">
+         <rect>
+          <x>190</x>
+          <y>280</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Andale Mono</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>DINERO </string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="label_64">
+        <property name="geometry">
+         <rect>
+          <x>460</x>
+          <y>80</y>
+          <width>311</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Andale Mono</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>ULTIMAS TRANSACCIONES</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <zorder>label_64</zorder>
+       <zorder>boton_abonar</zorder>
+       <zorder>label_57</zorder>
+       <zorder>boton_retirar</zorder>
+       <zorder>label_59</zorder>
+       <zorder>boton_comprar_caja_menor</zorder>
+       <zorder>motivo_gasto</zorder>
+       <zorder>label_61</zorder>
+       <zorder>boton_fiar_caja_menor</zorder>
+       <zorder>label_60</zorder>
+       <zorder>tableWidget_9</zorder>
+       <zorder>label_58</zorder>
+       <zorder>abonar_dinero</zorder>
+       <zorder>retirar_dinero</zorder>
+       <zorder>cantidad_dinero_caja</zorder>
+       <zorder>label_89</zorder>
+       <zorder>ingresar_dinero</zorder>
+       <zorder>boton_invertir_caja_menor</zorder>
+       <zorder>label_62</zorder>
+       <zorder>label_63</zorder>
       </widget>
      </widget>
      <widget class="QLabel" name="label_16">
@@ -2419,7 +2562,7 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_19">
+     <widget class="QLabel" name="cantidad_cupo">
       <property name="geometry">
        <rect>
         <x>310</x>
@@ -2477,7 +2620,7 @@ background-color: rgb(238, 238, 236);</string>
   <customwidget>
    <class>PlotWidget</class>
    <extends>QGraphicsView</extends>
-   <header>pyqtgraph</header>
+   <header location="global">pyqtgraph</header>
   </customwidget>
  </customwidgets>
  <resources/>

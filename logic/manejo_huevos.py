@@ -33,7 +33,7 @@ def obtener_produccion_diaria():
 	hoy = str(datetime.today().strftime('%d/%m/%Y'))
 	df = df[df['fecha'] == hoy]
 	
-	if (df.shape[0] == 0 ):
+	if (df['tipo'].shape[0] < 18 ):
 		llenar_inicio_dia_inventario()
 	
 	df = pd.read_csv("./files/ingreso_huevos.csv",sep=';',index_col=False)

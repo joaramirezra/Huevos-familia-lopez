@@ -6,7 +6,6 @@ tipo_de_gallina = ['POLLITA','GALLINA']
 tipos_huevo = ['PIPO','B','A','AA','AAA','JUMBO','BLANCO','VENCIDO_VENTA','DESTRUIDOS']
 presentacion_huevos = ['unidad','cubeta','sobrante']
 
-
 def agregar_animales(*valores):
 	file = open("./files/manejo_galpon.csv",'a')
 	# agregar segun posicion 
@@ -25,7 +24,6 @@ def calcular_cantidad_huevos(unidades,cubetas,sobrantes):
 def calcular_rendimiento(huevos,animales):
 	return round(huevos/animales,3)
 	
-
 def obtener_rendimiento_diario():
 	produccion = obtener_produccion_diaria().groupby('galpon').sum()
 	huevos_pollitas = calcular_cantidad_huevos(*produccion.iloc[1].values)
@@ -38,5 +36,4 @@ def obtener_rendimiento_diario():
 	
 	return rendimiento_gallinas,rendimiento_pollitas
 
-print(obtener_rendimiento_diario())
 
