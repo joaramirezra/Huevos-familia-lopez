@@ -1,10 +1,7 @@
-# Huevos-familia-lopez
 
 version 1 
 
-aqui va ir un poco de documentacion 
-
-
+El sistema de gestion de huevos, alimentos y otros insumos esta diseñado para que el usuario tenga la posibilidad de conocer y manejar los recursos producto de bienes agroindustriales, para ello se apanlanca
 # Requerimientos 
 
 - python 3.6 or older
