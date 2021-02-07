@@ -6,3 +6,12 @@ def registro_caja(motivo,cantidad):
 	linea = crear_linea_con_fecha(motivo,cantidad)
 	file.write(linea+'\n')
 	file.close()
+
+def abono_agropaisa(cantidad):
+	registro_caja('abono a agropaisa',cantidad)
+
+def retiro_caja(cantidad):
+	registro_caja('retiro de caja menor a caja mayor',cantidad)
+
+def ingreso_caja(cantidad):
+	registro_caja('ingreso a caja menor de caja mayor',cantidad)

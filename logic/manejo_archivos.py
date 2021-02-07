@@ -1,6 +1,6 @@
 archivos = {
-	'compras'       : 'fecha;motivo;precio',
-	'credito'       : 'fecha;motivo;precio',
+	'compras'       : 'fecha;motivo;precio;es_alimento;cantidad',
+	'credito'       : 'fecha;motivo;precio;es_alimento;cantidad',
 	'venta_empaque' : 'fecha;cantidad;precio',
 	'gasto_alimento': 'fecha;galpon;cantidad',
 	'caja_mayor'    : 'fecha;motivo;cantidad_dinero',
