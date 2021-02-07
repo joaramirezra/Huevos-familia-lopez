@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>902</width>
+    <width>925</width>
     <height>596</height>
    </rect>
   </property>
@@ -23,8 +23,8 @@
    <widget class="QTabWidget" name="tabs">
     <property name="geometry">
      <rect>
-      <x>0</x>
-      <y>70</y>
+      <x>20</x>
+      <y>60</y>
       <width>901</width>
       <height>521</height>
      </rect>
@@ -41,7 +41,7 @@
      <string notr="true"/>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>0</number>
     </property>
     <widget class="QWidget" name="produccion">
      <attribute name="title">
@@ -820,11 +820,6 @@ background-color: rgb(238, 238, 236);</string>
         <string>SOBRANTES</string>
        </property>
       </item>
-      <item>
-       <property name="text">
-        <string>EMPAQUES</string>
-       </property>
-      </item>
      </widget>
      <widget class="QLabel" name="label_13">
       <property name="geometry">
@@ -1293,7 +1288,7 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="currentIndex">
-       <number>0</number>
+       <number>1</number>
       </property>
       <widget class="QWidget" name="tab_galpones">
        <attribute name="title">
@@ -1606,7 +1601,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>360</x>
-          <y>290</y>
+          <y>250</y>
           <width>191</width>
           <height>41</height>
          </rect>
@@ -1627,7 +1622,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>20</x>
-          <y>290</y>
+          <y>250</y>
           <width>111</width>
           <height>41</height>
          </rect>
@@ -1649,7 +1644,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>20</y>
+          <y>10</y>
           <width>201</width>
           <height>41</height>
          </rect>
@@ -1670,7 +1665,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>360</x>
-          <y>50</y>
+          <y>40</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1691,7 +1686,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>50</y>
+          <y>40</y>
           <width>201</width>
           <height>41</height>
          </rect>
@@ -1716,7 +1711,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>20</y>
+          <y>10</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1737,7 +1732,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>460</x>
-          <y>50</y>
+          <y>40</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1758,7 +1753,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>270</y>
+          <y>230</y>
           <width>201</width>
           <height>21</height>
          </rect>
@@ -1864,7 +1859,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>290</y>
+          <y>250</y>
           <width>201</width>
           <height>41</height>
          </rect>
@@ -1877,7 +1872,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>50</y>
+          <y>40</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1890,7 +1885,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>210</y>
+          <y>180</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1912,7 +1907,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>210</y>
+          <y>180</y>
           <width>201</width>
           <height>41</height>
          </rect>
@@ -1925,7 +1920,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>360</x>
-          <y>210</y>
+          <y>180</y>
           <width>191</width>
           <height>41</height>
          </rect>
@@ -1946,7 +1941,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>190</y>
+          <y>160</y>
           <width>201</width>
           <height>21</height>
          </rect>
@@ -1988,7 +1983,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>100</y>
+          <y>90</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -2009,7 +2004,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>360</x>
-          <y>130</y>
+          <y>110</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -2023,14 +2018,14 @@ background-color: rgb(238, 238, 236);</string>
          <string notr="true">background-color: rgb(209, 207, 192);</string>
         </property>
         <property name="text">
-         <string>COMPRAR</string>
+         <string>EFECTIVO</string>
         </property>
        </widget>
        <widget class="QLineEdit" name="cantidad_bultos_adquirir">
         <property name="geometry">
          <rect>
           <x>30</x>
-          <y>130</y>
+          <y>110</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -2043,7 +2038,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>150</x>
-          <y>110</y>
+          <y>90</y>
           <width>181</width>
           <height>21</height>
          </rect>
@@ -2064,7 +2059,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>130</y>
+          <y>110</y>
           <width>201</width>
           <height>41</height>
          </rect>
@@ -2077,7 +2072,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>460</x>
-          <y>130</y>
+          <y>110</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -2094,6 +2089,97 @@ background-color: rgb(238, 238, 236);</string>
          <string>CREDITO</string>
         </property>
        </widget>
+       <widget class="QLineEdit" name="precio_empaque_venta">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>320</y>
+          <width>201</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 236);</string>
+        </property>
+       </widget>
+       <widget class="QPushButton" name="boton_vender_empaques">
+        <property name="geometry">
+         <rect>
+          <x>360</x>
+          <y>320</y>
+          <width>191</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Andale Mono</family>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(209, 207, 192);</string>
+        </property>
+        <property name="text">
+         <string>VENDER EMPAQUES</string>
+        </property>
+       </widget>
+       <widget class="QLineEdit" name="cantidad_empaques_venta">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>320</y>
+          <width>91</width>
+          <height>41</height>
+         </rect>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(238, 238, 236);</string>
+        </property>
+       </widget>
+       <widget class="QLabel" name="titulo_bultos_5">
+        <property name="geometry">
+         <rect>
+          <x>30</x>
+          <y>300</y>
+          <width>91</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Andale Mono</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>NUMERO</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <widget class="QLabel" name="titulo_precio_5">
+        <property name="geometry">
+         <rect>
+          <x>140</x>
+          <y>300</y>
+          <width>201</width>
+          <height>21</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Andale Mono</family>
+         </font>
+        </property>
+        <property name="text">
+         <string>PRECIO</string>
+        </property>
+        <property name="alignment">
+         <set>Qt::AlignCenter</set>
+        </property>
+       </widget>
+       <zorder>titulo_precio_5</zorder>
+       <zorder>titulo_bultos_5</zorder>
        <zorder>label_63</zorder>
        <zorder>label_61</zorder>
        <zorder>label_64</zorder>
@@ -2116,6 +2202,9 @@ background-color: rgb(238, 238, 236);</string>
        <zorder>titulo_precio</zorder>
        <zorder>precio_adquisicion_costal</zorder>
        <zorder>boton_fiar_costales</zorder>
+       <zorder>precio_empaque_venta</zorder>
+       <zorder>boton_vender_empaques</zorder>
+       <zorder>cantidad_empaques_venta</zorder>
       </widget>
       <widget class="QWidget" name="teb_alimento">
        <attribute name="title">
@@ -2312,131 +2401,10 @@ font: 11pt &quot;Andale Mono&quot;;</string>
      <attribute name="title">
       <string>LIMON</string>
      </attribute>
-     <widget class="QLabel" name="label_65">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>0</y>
-        <width>311</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>ULTIMAS TRANSACCIONES</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QTableWidget" name="tabla_gasto_limon">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>40</y>
-        <width>311</width>
-        <height>421</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 11pt &quot;Andale Mono&quot;;
-background-color: rgb(238, 238, 236);</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <row>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>2</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>3</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>4</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>6</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>7</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>8</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>9</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>10</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>11</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>12</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>13</string>
-       </property>
-      </row>
-      <column>
-       <property name="text">
-        <string>FECHA</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>MOTIVO</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>CANTIDAD</string>
-       </property>
-      </column>
-     </widget>
      <widget class="QLabel" name="label_40">
       <property name="geometry">
        <rect>
-        <x>16</x>
+        <x>176</x>
         <y>340</y>
         <width>521</width>
         <height>28</height>
@@ -2458,7 +2426,7 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QFrame" name="frame_9">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>170</x>
         <y>230</y>
         <width>531</width>
         <height>101</height>
@@ -2622,7 +2590,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QLabel" name="label_41">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>180</x>
         <y>200</y>
         <width>521</width>
         <height>28</height>
@@ -2644,7 +2612,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QFrame" name="frame_10">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>170</x>
         <y>370</y>
         <width>531</width>
         <height>91</height>
@@ -2765,7 +2733,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QFrame" name="frame_17">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>170</x>
         <y>10</y>
         <width>541</width>
         <height>181</height>
@@ -2932,7 +2900,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QFrame" name="frame_18">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>160</x>
         <y>10</y>
         <width>541</width>
         <height>181</height>
@@ -3094,7 +3062,7 @@ p, li { white-space: pre-wrap; }
      <widget class="QFrame" name="frame_11">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>160</x>
         <y>230</y>
         <width>531</width>
         <height>101</height>
@@ -3255,110 +3223,10 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </widget>
-     <widget class="QTableWidget" name="tabla_gasto_cacao">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>40</y>
-        <width>311</width>
-        <height>421</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 11pt &quot;Andale Mono&quot;;
-background-color: rgb(238, 238, 236);</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <row>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>2</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>3</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>4</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>6</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>7</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>8</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>9</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>10</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>11</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>12</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>13</string>
-       </property>
-      </row>
-      <column>
-       <property name="text">
-        <string>FECHA</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>MOTIVO</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>CANTIDAD</string>
-       </property>
-      </column>
-     </widget>
      <widget class="QFrame" name="frame_12">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>160</x>
         <y>370</y>
         <width>531</width>
         <height>91</height>
@@ -3479,7 +3347,7 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QLabel" name="label_306">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>170</x>
         <y>200</y>
         <width>521</width>
         <height>28</height>
@@ -3498,31 +3366,10 @@ background-color: rgb(238, 238, 236);</string>
        <set>Qt::AlignCenter</set>
       </property>
      </widget>
-     <widget class="QLabel" name="label_307">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>0</y>
-        <width>311</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>ULTIMAS TRANSACCIONES</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
      <widget class="QLabel" name="label_286">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>160</x>
         <y>340</y>
         <width>531</width>
         <height>28</height>
@@ -3549,7 +3396,7 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QFrame" name="frame_19">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>160</x>
         <y>10</y>
         <width>541</width>
         <height>181</height>
@@ -3711,7 +3558,7 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QFrame" name="frame_13">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>160</x>
         <y>230</y>
         <width>531</width>
         <height>101</height>
@@ -3872,110 +3719,10 @@ p, li { white-space: pre-wrap; }
        </property>
       </widget>
      </widget>
-     <widget class="QTableWidget" name="tabla_gasto_flete">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>40</y>
-        <width>311</width>
-        <height>421</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 11pt &quot;Andale Mono&quot;;
-background-color: rgb(238, 238, 236);</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <row>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>2</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>3</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>4</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>6</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>7</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>8</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>9</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>10</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>11</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>12</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>13</string>
-       </property>
-      </row>
-      <column>
-       <property name="text">
-        <string>FECHA</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>MOTIVO</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>CANTIDAD</string>
-       </property>
-      </column>
-     </widget>
      <widget class="QFrame" name="frame_14">
       <property name="geometry">
        <rect>
-        <x>10</x>
+        <x>160</x>
         <y>370</y>
         <width>531</width>
         <height>91</height>
@@ -4096,7 +3843,7 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QLabel" name="label_200">
       <property name="geometry">
        <rect>
-        <x>20</x>
+        <x>170</x>
         <y>200</y>
         <width>521</width>
         <height>28</height>
@@ -4110,27 +3857,6 @@ background-color: rgb(238, 238, 236);</string>
       </property>
       <property name="text">
        <string>INGRESOS</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_202">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>0</y>
-        <width>311</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>ULTIMAS TRANSACCIONES</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -4139,624 +3865,7 @@ background-color: rgb(238, 238, 236);</string>
      <widget class="QLabel" name="label_287">
       <property name="geometry">
        <rect>
-        <x>10</x>
-        <y>340</y>
-        <width>531</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>EGRESOS</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-    </widget>
-    <widget class="QWidget" name="tab_4">
-     <attribute name="title">
-      <string>OTROS</string>
-     </attribute>
-     <widget class="QFrame" name="frame_20">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>10</y>
-        <width>541</width>
-        <height>181</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QWidget" name="layoutWidget_33">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>80</y>
-         <width>521</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_30">
-        <item>
-         <widget class="QLabel" name="label_203">
-          <property name="font">
-           <font>
-            <family>Andale Mono</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>EGRESO</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="valor_egreso_otros">
-          <property name="font">
-           <font>
-            <family>Andale Mono</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(78, 154, 6);</string>
-          </property>
-          <property name="text">
-           <string>8'541.005 PESOS</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="layoutWidget_34">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>140</y>
-         <width>521</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_31">
-        <item>
-         <widget class="QLabel" name="label_204">
-          <property name="font">
-           <font>
-            <family>Andale Mono</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>SALDO</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="valor_saldo_otros">
-          <property name="font">
-           <font>
-            <family>Andale Mono</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(78, 154, 6);</string>
-          </property>
-          <property name="text">
-           <string>8'541.005 PESOS</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-      <widget class="QWidget" name="layoutWidget_35">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>521</width>
-         <height>30</height>
-        </rect>
-       </property>
-       <layout class="QHBoxLayout" name="horizontalLayout_32">
-        <item>
-         <widget class="QLabel" name="label_206">
-          <property name="font">
-           <font>
-            <family>Andale Mono</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="text">
-           <string>INGRESO</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-        <item>
-         <widget class="QLabel" name="valor_ingreso_otros">
-          <property name="font">
-           <font>
-            <family>Andale Mono</family>
-            <pointsize>18</pointsize>
-           </font>
-          </property>
-          <property name="styleSheet">
-           <string notr="true">color: rgb(78, 154, 6);</string>
-          </property>
-          <property name="text">
-           <string>8'541.005 PESOS</string>
-          </property>
-          <property name="alignment">
-           <set>Qt::AlignCenter</set>
-          </property>
-         </widget>
-        </item>
-       </layout>
-      </widget>
-     </widget>
-     <widget class="QFrame" name="frame_15">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>230</y>
-        <width>531</width>
-        <height>101</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QLabel" name="label_279">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>20</y>
-         <width>91</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Andale Mono</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>CANTIDAD</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QPushButton" name="boton_venta_otros">
-       <property name="geometry">
-        <rect>
-         <x>420</x>
-         <y>50</y>
-         <width>101</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Andale Mono</family>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(209, 207, 192);</string>
-       </property>
-       <property name="text">
-        <string>INGRESAR</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_280">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>10</y>
-         <width>111</width>
-         <height>44</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Andale Mono</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>VALOR
- CANASTILLA</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_281">
-       <property name="geometry">
-        <rect>
-         <x>260</x>
-         <y>20</y>
-         <width>151</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Andale Mono</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>OBSERVACION</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="cantidad_otros_venta_6">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>50</y>
-         <width>91</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(238, 238, 236);</string>
-       </property>
-      </widget>
-      <widget class="QTextEdit" name="observacion_otros">
-       <property name="geometry">
-        <rect>
-         <x>250</x>
-         <y>50</y>
-         <width>151</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font/>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(238, 238, 236);</string>
-       </property>
-       <property name="html">
-        <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Ubuntu'; font-size:11pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="valor_venta_otros">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>50</y>
-         <width>111</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(238, 238, 236);</string>
-       </property>
-      </widget>
-     </widget>
-     <widget class="QTableWidget" name="tabla_gasto_otros">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>40</y>
-        <width>311</width>
-        <height>421</height>
-       </rect>
-      </property>
-      <property name="styleSheet">
-       <string notr="true">font: 11pt &quot;Andale Mono&quot;;
-background-color: rgb(238, 238, 236);</string>
-      </property>
-      <property name="verticalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <property name="horizontalScrollBarPolicy">
-       <enum>Qt::ScrollBarAlwaysOff</enum>
-      </property>
-      <row>
-       <property name="text">
-        <string>1</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>2</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>3</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>4</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>5</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>6</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>7</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>8</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>9</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>10</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>11</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>12</string>
-       </property>
-      </row>
-      <row>
-       <property name="text">
-        <string>13</string>
-       </property>
-      </row>
-      <column>
-       <property name="text">
-        <string>FECHA</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>MOTIVO</string>
-       </property>
-      </column>
-      <column>
-       <property name="text">
-        <string>CANTIDAD</string>
-       </property>
-      </column>
-     </widget>
-     <widget class="QFrame" name="frame_16">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
-        <y>370</y>
-        <width>531</width>
-        <height>91</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="frameShape">
-       <enum>QFrame::StyledPanel</enum>
-      </property>
-      <property name="frameShadow">
-       <enum>QFrame::Raised</enum>
-      </property>
-      <widget class="QPushButton" name="boton_gasto_otros">
-       <property name="geometry">
-        <rect>
-         <x>420</x>
-         <y>40</y>
-         <width>101</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Andale Mono</family>
-        </font>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(236, 201, 199);</string>
-       </property>
-       <property name="text">
-        <string>GASTADO</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_282">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>10</y>
-         <width>91</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Andale Mono</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>DINERO</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="cantidad_gasto_otros">
-       <property name="geometry">
-        <rect>
-         <x>10</x>
-         <y>40</y>
-         <width>91</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(238, 238, 236);</string>
-       </property>
-      </widget>
-      <widget class="QLineEdit" name="concepto_gasto_otros">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>40</y>
-         <width>291</width>
-         <height>41</height>
-        </rect>
-       </property>
-       <property name="styleSheet">
-        <string notr="true">background-color: rgb(238, 238, 236);</string>
-       </property>
-      </widget>
-      <widget class="QLabel" name="label_283">
-       <property name="geometry">
-        <rect>
-         <x>120</x>
-         <y>20</y>
-         <width>271</width>
-         <height>21</height>
-        </rect>
-       </property>
-       <property name="font">
-        <font>
-         <family>Andale Mono</family>
-         <pointsize>12</pointsize>
-         <weight>75</weight>
-         <bold>true</bold>
-        </font>
-       </property>
-       <property name="text">
-        <string>CONCEPTO</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignCenter</set>
-       </property>
-      </widget>
-      <zorder>label_283</zorder>
-      <zorder>boton_gasto_otros</zorder>
-      <zorder>label_282</zorder>
-      <zorder>cantidad_gasto_otros</zorder>
-      <zorder>concepto_gasto_otros</zorder>
-     </widget>
-     <widget class="QLabel" name="label_284">
-      <property name="geometry">
-       <rect>
-        <x>20</x>
-        <y>200</y>
-        <width>521</width>
-        <height>28</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-        <pointsize>18</pointsize>
-       </font>
-      </property>
-      <property name="text">
-       <string>INGRESOS</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_285">
-      <property name="geometry">
-       <rect>
-        <x>560</x>
-        <y>0</y>
-        <width>311</width>
-        <height>41</height>
-       </rect>
-      </property>
-      <property name="font">
-       <font>
-        <family>Andale Mono</family>
-       </font>
-      </property>
-      <property name="text">
-       <string>ULTIMAS TRANSACCIONES</string>
-      </property>
-      <property name="alignment">
-       <set>Qt::AlignCenter</set>
-      </property>
-     </widget>
-     <widget class="QLabel" name="label_308">
-      <property name="geometry">
-       <rect>
-        <x>10</x>
+        <x>160</x>
         <y>340</y>
         <width>531</width>
         <height>28</height>
@@ -5050,7 +4159,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="text">
-       <string>CANTIDAD POLLOS : </string>
+       <string>CANTIDAD POLLOS VIVOS : </string>
       </property>
      </widget>
      <widget class="QLineEdit" name="cantidad__pollos">
@@ -5143,7 +4252,7 @@ p, li { white-space: pre-wrap; }
        </font>
       </property>
       <property name="text">
-       <string>INDICE DE MORTALIDAD :</string>
+       <string>INDICE DE MORTALIDAD  :</string>
       </property>
      </widget>
      <widget class="QLabel" name="label_82">
@@ -5517,6 +4626,11 @@ background-color: rgb(238, 238, 236);</string>
      <zorder>tabla_pollos</zorder>
      <zorder>precio_pollos</zorder>
      <zorder>frame_21</zorder>
+    </widget>
+    <widget class="QWidget" name="tab_4">
+     <attribute name="title">
+      <string>Contactos</string>
+     </attribute>
     </widget>
    </widget>
    <widget class="QLabel" name="label_7">
