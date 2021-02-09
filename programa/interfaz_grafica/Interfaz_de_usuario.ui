@@ -475,7 +475,7 @@ background-color: rgb(238, 238, 236);</string>
        </item>
        <item row="9" column="3">
         <property name="text">
-         <string>########</string>
+         <string>***********</string>
         </property>
        </item>
       </widget>
@@ -1600,9 +1600,9 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QPushButton" name="boton_abonar">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>250</y>
-          <width>191</width>
+          <x>790</x>
+          <y>100</y>
+          <width>91</width>
           <height>41</height>
          </rect>
         </property>
@@ -1621,8 +1621,8 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLabel" name="label_57">
         <property name="geometry">
          <rect>
-          <x>20</x>
-          <y>250</y>
+          <x>540</x>
+          <y>110</y>
           <width>111</width>
           <height>41</height>
          </rect>
@@ -1644,8 +1644,8 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>10</y>
-          <width>201</width>
+          <y>30</y>
+          <width>171</width>
           <height>41</height>
          </rect>
         </property>
@@ -1655,7 +1655,8 @@ background-color: rgb(238, 238, 236);</string>
          </font>
         </property>
         <property name="text">
-         <string>MOTIVO</string>
+         <string>MOTIVO GASTO 
+ CAJA MENOR</string>
         </property>
         <property name="alignment">
          <set>Qt::AlignCenter</set>
@@ -1665,7 +1666,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>360</x>
-          <y>40</y>
+          <y>70</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1686,8 +1687,8 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>140</x>
-          <y>40</y>
-          <width>201</width>
+          <y>70</y>
+          <width>171</width>
           <height>41</height>
          </rect>
         </property>
@@ -1710,8 +1711,8 @@ p, li { white-space: pre-wrap; }
        <widget class="QLabel" name="label_61">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>10</y>
+          <x>20</x>
+          <y>40</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1732,7 +1733,7 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>460</x>
-          <y>40</y>
+          <y>70</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1774,9 +1775,9 @@ p, li { white-space: pre-wrap; }
         <property name="geometry">
          <rect>
           <x>570</x>
-          <y>50</y>
+          <y>190</y>
           <width>311</width>
-          <height>291</height>
+          <height>171</height>
          </rect>
         </property>
         <property name="styleSheet">
@@ -1858,9 +1859,9 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLineEdit" name="abonar_dinero">
         <property name="geometry">
          <rect>
-          <x>140</x>
-          <y>250</y>
-          <width>201</width>
+          <x>660</x>
+          <y>100</y>
+          <width>101</width>
           <height>41</height>
          </rect>
         </property>
@@ -1871,9 +1872,9 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLineEdit" name="cantidad_dinero_caja">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>40</y>
-          <width>91</width>
+          <x>20</x>
+          <y>70</y>
+          <width>81</width>
           <height>41</height>
          </rect>
         </property>
@@ -1884,8 +1885,8 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLabel" name="label_89">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>180</y>
+          <x>540</x>
+          <y>40</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -1906,9 +1907,9 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLineEdit" name="ingresar_dinero">
         <property name="geometry">
          <rect>
-          <x>140</x>
-          <y>180</y>
-          <width>201</width>
+          <x>660</x>
+          <y>40</y>
+          <width>101</width>
           <height>41</height>
          </rect>
         </property>
@@ -1919,9 +1920,9 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QPushButton" name="boton_invertir_caja_menor">
         <property name="geometry">
          <rect>
-          <x>360</x>
-          <y>180</y>
-          <width>191</width>
+          <x>780</x>
+          <y>40</y>
+          <width>101</width>
           <height>41</height>
          </rect>
         </property>
@@ -1940,9 +1941,9 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLabel" name="label_63">
         <property name="geometry">
          <rect>
-          <x>140</x>
-          <y>160</y>
-          <width>201</width>
+          <x>660</x>
+          <y>20</y>
+          <width>101</width>
           <height>21</height>
          </rect>
         </property>
@@ -1961,8 +1962,8 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLabel" name="label_64">
         <property name="geometry">
          <rect>
-          <x>580</x>
-          <y>10</y>
+          <x>570</x>
+          <y>160</y>
           <width>311</width>
           <height>41</height>
          </rect>
@@ -1982,8 +1983,8 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLabel" name="titulo_bultos">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>90</y>
+          <x>20</x>
+          <y>150</y>
           <width>91</width>
           <height>21</height>
          </rect>
@@ -2004,7 +2005,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>360</x>
-          <y>110</y>
+          <y>170</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -2024,8 +2025,8 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLineEdit" name="cantidad_bultos_adquirir">
         <property name="geometry">
          <rect>
-          <x>30</x>
-          <y>110</y>
+          <x>20</x>
+          <y>170</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -2037,8 +2038,8 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLabel" name="titulo_precio">
         <property name="geometry">
          <rect>
-          <x>150</x>
-          <y>90</y>
+          <x>140</x>
+          <y>150</y>
           <width>181</width>
           <height>21</height>
          </rect>
@@ -2058,8 +2059,8 @@ background-color: rgb(238, 238, 236);</string>
        <widget class="QLineEdit" name="precio_adquisicion_costal">
         <property name="geometry">
          <rect>
-          <x>140</x>
-          <y>110</y>
+          <x>130</x>
+          <y>170</y>
           <width>201</width>
           <height>41</height>
          </rect>
@@ -2072,7 +2073,7 @@ background-color: rgb(238, 238, 236);</string>
         <property name="geometry">
          <rect>
           <x>460</x>
-          <y>110</y>
+          <y>170</y>
           <width>91</width>
           <height>41</height>
          </rect>
@@ -2750,7 +2751,7 @@ p, li { white-space: pre-wrap; }
       <property name="frameShadow">
        <enum>QFrame::Raised</enum>
       </property>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2797,7 +2798,7 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -2844,7 +2845,7 @@ p, li { white-space: pre-wrap; }
         </item>
        </layout>
       </widget>
-      <widget class="QWidget" name="">
+      <widget class="QWidget" name="layoutWidget">
        <property name="geometry">
         <rect>
          <x>10</x>
@@ -4629,8 +4630,38 @@ background-color: rgb(238, 238, 236);</string>
     </widget>
     <widget class="QWidget" name="tab_4">
      <attribute name="title">
-      <string>Contactos</string>
+      <string>Contacto</string>
      </attribute>
+     <widget class="QLabel" name="label_508">
+      <property name="geometry">
+       <rect>
+        <x>190</x>
+        <y>146</y>
+        <width>491</width>
+        <height>91</height>
+       </rect>
+      </property>
+      <property name="styleSheet">
+       <string notr="true">font: 57 44pt &quot;Ubuntu&quot;;
+color: rgb(204, 0, 0);</string>
+      </property>
+      <property name="text">
+       <string>JOHAN RAMIREZ </string>
+      </property>
+     </widget>
+     <widget class="QLabel" name="label_509">
+      <property name="geometry">
+       <rect>
+        <x>320</x>
+        <y>250</y>
+        <width>231</width>
+        <height>17</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>email : joaramirezra@gmail.com</string>
+      </property>
+     </widget>
     </widget>
    </widget>
    <widget class="QLabel" name="label_7">
