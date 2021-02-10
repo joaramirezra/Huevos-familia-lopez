@@ -364,10 +364,11 @@ class Hello_world(Ui_MainWindow):
         ren_pollitas,ren_gallinas = obtener_rendimiento_diario()
         self.cantidad_pollitas.setText(str(pollitas))
         self.cantidad_gallinas.setText(str(gallinas))
-        
-        self.rendimiento_pollitas.setValue(ren_gallinas*100)
-        self.rendimiento_gallinas.setValue(ren_pollitas*100)
-        self.graficar_rendimiento()
+        ren_gallinas = int(ren_gallinas)*100
+        ren_pollitas =int(ren_pollitas)*100
+        self.rendimiento_pollitas.setValue()
+        self.rendimiento_gallinas.setValue(ren_pollitas)
+        self.graficar_rendimiento(ren_gallinas)
         
     def graficar_rendimiento(self): 
         rendimiento_pollitas,rendimiento_gallinas = Rendimiento_acumulado()
