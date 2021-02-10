@@ -18,6 +18,7 @@ from logica.manejo_limones import *
 from logica.manejo_cacao import *
 from logica.manejo_fletes import *
 from logica.manejo_pollos import *
+
 class Hello_world(Ui_MainWindow):
     def __init__( self ):
         super().__init__()
@@ -79,7 +80,6 @@ class Hello_world(Ui_MainWindow):
         self.actualizar_inventario()
         self.actualizar_rendimiento()
         self.inicizalizar_graficas()
-        agregar_animales('0','0')
         self.actualizar_saldos()
         self.actualizar_alimento()
         self.graficar_alimentacion()
@@ -87,7 +87,7 @@ class Hello_world(Ui_MainWindow):
         self.actualizar_tabla_caco()
         self.actualizar_tabla_flete()
         self.actualizar_dinero_pollos()
-        self.   actualizar_tabla_pollo()
+        self.actualizar_tabla_pollo()
     
     def agregar_produccion_gui(self):
         tipos_huevo = ['PIPO','B','A','AA','AAA','JUMBO','BLANCO',
@@ -364,7 +364,6 @@ class Hello_world(Ui_MainWindow):
         ren_pollitas,ren_gallinas = obtener_rendimiento_diario()
         self.cantidad_pollitas.setText(str(pollitas))
         self.cantidad_gallinas.setText(str(gallinas))
-        print(ren_pollitas,ren_gallinas)
         
         self.rendimiento_pollitas.setValue(ren_gallinas*100)
         self.rendimiento_gallinas.setValue(ren_pollitas*100)
@@ -460,19 +459,17 @@ class Hello_world(Ui_MainWindow):
             item_venta_acum = QTableWidgetItem()
             item_venta_acum.setText("".join(str(registro).split(' ')[0]))
             self.tabla_caja_menor.setItem(i,0,item_venta_acum)
-            print(str(registro))
-        
+            
+
         for i,registro in enumerate(registros['motivo']):
             item_venta_acum = QTableWidgetItem()
             item_venta_acum.setText(str(registro))
             self.tabla_caja_menor.setItem(i,1,item_venta_acum)
-            print(str(registro))
-        
+            
         for i,registro in enumerate(registros['precio']):
             item_venta_acum = QTableWidgetItem()
             item_venta_acum.setText(str(registro))
             self.tabla_caja_menor.setItem(i,2,item_venta_acum)
-            print(str(registro))
             
 
     def actualizar_saldos(self):
@@ -530,14 +527,12 @@ class Hello_world(Ui_MainWindow):
         historico_alimentacion = obtener_cantidad_bultos_gastados_historico()
         historico_gallinas = historico_alimentacion[historico_alimentacion['galpon'] == 'GALLINA']
         historico_pollitas = historico_alimentacion[historico_alimentacion['galpon'] == 'POLLITA']
-        self.limpiar_graficas_rendimiento()
         ren_gallinas = historico_gallinas['cantidad']
         ren_polliras = historico_pollitas['cantidad']
+        self.limpiar_graficas_rendimiento()
         self.graphicsView_5.plot(list(ren_gallinas),fillLevel=0,brush=("#9fccb8"))
         self.graphicsView_4.plot(list(ren_polliras),fillLevel=0,brush=("#9fccb8"))
-        print(historico_gallinas)
-        print(ren_polliras)
-
+       
 #-------------------------------------------------------------------------------
 #------------------------------------Limones -----------------------------------
 
@@ -748,20 +743,17 @@ class Hello_world(Ui_MainWindow):
             item_venta_acum = QTableWidgetItem()
             item_venta_acum.setText("".join(str(registro).split(' ')[0]))
             self.tabla_pollos.setItem(i,0,item_venta_acum)
-            print(str(registro))
-        
+            
         for i,registro in enumerate(registros['motivo']):
             item_venta_acum = QTableWidgetItem()
             item_venta_acum.setText(str(registro))
             self.tabla_pollos.setItem(i,1,item_venta_acum)
-            print(str(registro))
-        
+            
         for i,registro in enumerate(registros['precio']):
             item_venta_acum = QTableWidgetItem()
             item_venta_acum.setText(str(registro))
             self.tabla_pollos.setItem(i,2,item_venta_acum)
-            print(str(registro))
-    
+            
 
 def main():
     # Crear_pollos()
