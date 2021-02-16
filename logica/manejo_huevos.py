@@ -59,3 +59,8 @@ def obtener_produccion_diaria():
 	df.to_csv('./files/produccion_diaria.csv',sep=';',index= False)
 	
 	return df
+
+def total_diario():
+	return obtener_produccion_diaria()
+
+	

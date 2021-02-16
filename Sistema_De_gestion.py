@@ -203,6 +203,12 @@ class Hello_world(Ui_MainWindow):
         total_unidades.setText(str(sum_unidades))
         self.tabla_produccion_diaria.setItem(9,5,total_unidades)
 
+        total_diario_huevos =  total_diario()
+        total_diario_huevos['total'] = total_diario_huevos['unidades']+total_diario_huevos['sobrantes']
+        print(total_diario_huevos)
+
+    
+
 #-------------------------------------------------------------------------------
 #---------------------------------Ventas----------------------------------------
 
