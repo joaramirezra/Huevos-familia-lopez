@@ -41,7 +41,7 @@
      <string notr="true">selection-background-color: rgb(245, 121, 0);</string>
     </property>
     <property name="currentIndex">
-     <number>0</number>
+     <number>2</number>
     </property>
     <widget class="QWidget" name="produccion">
      <attribute name="title">
@@ -1600,7 +1600,7 @@ background-color: rgb(238, 238, 236);</string>
        </font>
       </property>
       <property name="currentIndex">
-       <number>3</number>
+       <number>0</number>
       </property>
       <widget class="QWidget" name="tab_galpones">
        <attribute name="title">
@@ -1658,6 +1658,9 @@ background-color: rgb(238, 238, 236);</string>
           <family>Andale Mono</family>
          </font>
         </property>
+        <property name="maximum">
+         <number>100</number>
+        </property>
         <property name="value">
          <number>0</number>
         </property>
@@ -1675,6 +1678,9 @@ background-color: rgb(238, 238, 236);</string>
          <font>
           <family>Andale Mono</family>
          </font>
+        </property>
+        <property name="maximum">
+         <number>100</number>
         </property>
         <property name="value">
          <number>0</number>

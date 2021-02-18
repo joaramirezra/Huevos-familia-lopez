@@ -666,6 +666,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Andale Mono")
         self.rendimiento_pollitas.setFont(font)
+        self.rendimiento_pollitas.setMaximum(100)
         self.rendimiento_pollitas.setProperty("value", 0)
         self.rendimiento_pollitas.setObjectName("rendimiento_pollitas")
         self.rendimiento_gallinas = QtWidgets.QProgressBar(self.tab_galpones)
@@ -673,6 +674,7 @@ class Ui_MainWindow(object):
         font = QtGui.QFont()
         font.setFamily("Andale Mono")
         self.rendimiento_gallinas.setFont(font)
+        self.rendimiento_gallinas.setMaximum(100)
         self.rendimiento_gallinas.setProperty("value", 0)
         self.rendimiento_gallinas.setObjectName("rendimiento_gallinas")
         self.cantidad_gallinas = QtWidgets.QLabel(self.tab_galpones)
@@ -2645,8 +2647,8 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(0)
-        self.tabs_internas.setCurrentIndex(3)
+        self.tabs.setCurrentIndex(2)
+        self.tabs_internas.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def retranslateUi(self, MainWindow):
