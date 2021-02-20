@@ -4,8 +4,8 @@ import pandas as pd
 
 import pandas as pd 
 
-from .manejo_huevos import *
-from .manejo_ventas import *
+from .manejo_huevos import obtener_produccion
+from .manejo_ventas import obtener_venta_huevos
 
 def inventario():
     produccion_total = obtener_produccion()
