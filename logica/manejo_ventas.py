@@ -28,6 +28,7 @@ def obtener_venta_huevos():
 	df = df[['tipo','unidades','cubeta','sobrantes']]
 	if (len(df['tipo'].unique())<9):
 		llenar_inventario_venta()
+		return obtener_venta_huevos()
 	df = df.groupby('tipo').sum().reset_index()
 	return df
 
@@ -52,6 +53,9 @@ def venta_acumulada_dia():
 
 def venta_acumulada():
 	df = venta_acumulada_dias()
+	if (df['tipo'].shape[0]<9):
+		llenar_inventario_venta()
+		df = venta_acumulada_dias()
 	return df.groupby('tipo').sum().reset_index()
 
 def venta_total():
