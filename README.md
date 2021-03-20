@@ -11,6 +11,10 @@ El sistema de gestion de huevos, alimentos y otros insumos esta diseñado para q
 - PyQt5
 - Pandas 
 
+# Uso 
+ - Pestaña Huevos Diario
+ - inventario y ventas
+ - algo mas
 # Derechos Reservados 
 
 # Autores : 
