@@ -19,6 +19,12 @@ los ultimos 3 requerimientos se recomienda realizar su instalacion por medio del
 # Derechos reservados 
 Creative Commons 2021
 
+# Uso 
+ - Pestaña Huevos Diario
+ - inventario y ventas
+ - algo mas
+# Derechos Reservados 
+
 
 # Autores : 
 - [Johan Ramirez](https://github.com/joaramirezra)
