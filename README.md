@@ -1,5 +1,30 @@
 
-# Huevos-familia-lopez
+<center>  Huevos-familia-lopez<\center>
+ 
+<img src="./imagenes_readme/caja_menor.png"
+     alt="Imagen inicial"
+     width="600" height="400"
+     >  
+     
+ 
+ Heading Identifiers:
+### Red text title {#identifier .red}
+
+Fenced Code Attributes:
+{.red .numberLines startFrom="1"}
+
+Inline Code Attributes:
+`red text`{.red}
+
+Bracketed Spans:
+[This is *some red text*]{.red}
+
+Link Attributes:
+![alt text](the.jpg){.center}
+
+.img {
+  horizontal-align: middle
+}
 ---
 
 **version 2.0**
@@ -20,6 +45,8 @@ los ultimos 3 requerimientos se recomienda realizar su instalacion por medio del
 Creative Commons 2021
 
 # Uso 
+
+![](imagenes_readme/produccion.png)
  - Pestaña Huevos Diario
  - inventario y ventas
  - algo mas
