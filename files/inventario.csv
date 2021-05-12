@@ -1,0 +1,65 @@
+fecha;producto;transaccion;cantidad;motivo
+11/05/2021;A;ingreso;0;Produccion de 0 huevos tipo A
+11/05/2021;PIPO;ingreso;40;Produccion de 40 huevos tipo PIPO
+11/05/2021;B;ingreso;90;Produccion de 90 huevos tipo B
+11/05/2021;A;ingreso;940;Produccion de 940 huevos tipo A
+11/05/2021;AAA;ingreso;90;Produccion de 90 huevos tipo AAA
+11/05/2021;AA;ingreso;90;Produccion de 90 huevos tipo AA
+11/05/2021;JUMBO;ingreso;235;Produccion de 235 huevos tipo JUMBO
+11/05/2021;BLANCO;ingreso;300;Produccion de 300 huevos tipo BLANCO
+11/05/2021;VENCIDO VENTA;ingreso;330;Produccion de 330 huevos tipo VENCIDO VENTA
+11/05/2021;A;ingreso;-900;produccion de 900 huevos tipo A
+11/05/2021;BLANCO;ingreso;-270;produccion de 270 huevos tipo BLANCO
+11/05/2021;VENCIDO VENTA;ingreso;-320;produccion de 320 huevos tipo VENCIDO VENTA
+11/05/2021;DESTRUIDOS;ingreso;295;Produccion de 295 huevos tipo DESTRUIDOS
+11/05/2021;gallinas;ingreso;1000;adquisicion de 1000 gallinas 
+11/05/2021;PIPO;egreso;-3;venta de 3 huevos, como SOBRANTES
+11/05/2021;PIPO;egreso;-30;venta de 30 huevos, como CUBETAS
+11/05/2021;AA;egreso;-30;venta de 30 huevos, como CUBETAS
+11/05/2021;VENCIDO VENTA;egreso;11;devolucion de 11 huevos, debido a 
+11/05/2021;DESTRUIDOS;egreso;-270;venta de 270 huevos, como CUBETAS
+11/05/2021;PIPO;egreso;240;devolucion de 240 huevos, debido a 
+11/05/2021;PIPO;egreso;-240;venta de 240 huevos, como CUBETAS
+11/05/2021;PIPO;egreso;-7;venta de 7 huevos, como SOBRANTES
+11/05/2021;alimento_gallinas;ingreso;14;compra de 14 bultos de comida para gallinas
+11/05/2021;alimento_gallinas;ingreso;10;credito de 10 bultos de comida para gallinas
+11/05/2021;alimento_gallinas;ingreso;10;credito de 10 bultos de comida para gallinas
+11/05/2021;alimento_gallinas;ingreso;6;credito de 6 bultos de comida para gallinas
+11/05/2021;alimento_gallinas;ingreso;10;credito de 10 bultos de comida para gallinas
+11/05/2021;gallinas;egreso;-150;muerte de 150 gallinas 
+11/05/2021;gallinas;ingreso;300;adquisicion de 300 gallinas 
+11/05/2021;alimento_gallinas;egreso;-50;gasto de 50 bultos de alimentos para gallinas 
+11/05/2021;empaques;ingreso;50;gasto de 50 bultos de alimentos para gallinas 
+11/05/2021;alimento_gallinas;ingreso;10;devolucion de 10 bultos de alimentos para gallinas 
+11/05/2021;empaques;egreso;-10;devolucion de 10 bultos de alimentos para gallinas 
+11/05/2021;alimento_gallinas;ingreso;35;devolucion de 35 bultos de alimentos para gallinas 
+11/05/2021;empaques;egreso;-35;devolucion de 35 bultos de alimentos para gallinas 
+11/05/2021;alimento_gallinas;egreso;-6;gasto de 6 bultos de alimentos para gallinas 
+11/05/2021;empaques;ingreso;6;gasto de 6 bultos de alimentos para gallinas 
+11/05/2021;empaques;egreso;-11;venta de 11 empaques por valor de 38500
+11/05/2021;pollos;ingreso;50;compra de 50 pollos V/U 1000 pesos , total 50000 pesos
+11/05/2021;pollos;egreso;-10;muerte de 10 pollos
+11/05/2021;pollos;egreso;-40;muerte de 40 pollos
+11/05/2021;pollos;ingreso;50;compra de 50 pollos V/U 3000 pesos , total 150000 pesos
+11/05/2021;alimento_pollos;ingreso;50;compra de 50 de bultos 
+11/05/2021;alimento_pollos;egreso;-50;Gasto de 50 bultos de alimento
+11/05/2021;empaques;ingreso;50;Gasto de 50 bultos de alimento
+11/05/2021;alimento_pollos;ingreso;45;devolucion de 45 bultos de alimento
+11/05/2021;empaques;egreso;-45;devolucion de 45 bultos de alimento
+11/05/2021;alimento_pollos;ingreso;5;devolucion de 5 bultos de alimento
+11/05/2021;empaques;egreso;-5;devolucion de 5 bultos de alimento
+11/05/2021;alimento_pollos;egreso;-11;Gasto de 11 bultos de alimento
+11/05/2021;empaques;ingreso;11;Gasto de 11 bultos de alimento
+11/05/2021;alimento_pollos;ingreso;10;credito de 10 de bultos 
+11/05/2021;alimento_pollos;ingreso;15;credito de 15 de bultos 
+11/05/2021;A;egreso;-30;venta de 30 huevos, como CUBETAS
+11/05/2021;pollos;egreso;-5;muerte de 5 pollos
+11/05/2021;pollos;egreso;-45;muerte de 45 pollos
+11/05/2021;alimento_pollos;ingreso;2;credito de 2 de bultos 
+11/05/2021;alimento_pollos;ingreso;3;credito de 3 de bultos 
+11/05/2021;alimento_pollos;ingreso;1;credito de 1 de bultos 
+11/05/2021;alimento_pollos;ingreso;1;credito de 1 de bultos 
+11/05/2021;alimento_pollos;ingreso;1;credito de 1 de bultos 
+11/05/2021;alimento_gallinas;ingreso;50;credito de 50 bultos de comida para gallinas
+11/05/2021;alimento_gallinas;ingreso;10;credito de 10 bultos de comida para gallinas
+11/05/2021;BLANCO;egreso;-30;venta de 30 huevos, como CUBETAS

@@ -4,21 +4,20 @@ from pyqtgraph import PlotWidget
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QTableWidgetItem
 
-from logica.logic import *
-from logica.manejo_huevos import *
-from logica.manejo_ventas import *
-from logica.manejo_inventario import *
-from logica.manejo_galpon import *
-from logica.manejo_compras import *
-from logica.manejo_credito import *
+from logica.produccion import * 
+from logica.ventas import *
+from logica.caja_gallinas import * 
+from logica.limones import *
+from logica.cacao import *
+from logica.fletes import *
+from logica.caja_pollos import * 
+from logica.alimento_pollos import *
+
+
 from interfaz_grafica.Interfaz_de_usuario import Ui_MainWindow
-from logica.gasto_alimento import *
-from logica.venta_empaques import *
-from logica.manejo_limones import * 
-from logica.manejo_cacao import *
-from logica.manejo_fletes import *
-from logica.manejo_pollos import *
-from logica.manejo_ganancias import *
+
+convertir_pesos = lambda x : f'{int(x):,.0f} PESOS'
+
 class Hello_world(Ui_MainWindow):
     def __init__( self ):
         super().__init__()
@@ -26,6 +25,7 @@ class Hello_world(Ui_MainWindow):
     def setupUi( self, MW ):
         super().setupUi( MW )
         self.actualizar_interfaz()
+        self.actualizar_produccion()
         
         self.boton_agregar_produccion.clicked.connect(self.agregar_produccion_gui)
         self.boton_eliminar_produccion.clicked.connect(self.eliminar_produccion_gui)
@@ -36,955 +36,954 @@ class Hello_world(Ui_MainWindow):
         self.boton_agregar_animales.clicked.connect(self.agregar_animales_gui)
         self.boton_dar_baja_animales.clicked.connect(self.eliminar_animales_gui)
         
-        self.boton_comprar_caja_menor.clicked.connect(self.compra_caja_menor_gui)
-        self.boton_fiar_caja_menor.clicked.connect(self.credito_caja_menor_gui)
-        self.boton_comprar_alimento.clicked.connect(self.comprar_alimento_gui)
-        self.boton_fiar_costales.clicked.connect(self.fiar_alimento_gui)
-        self.boton_invertir_caja_menor.clicked.connect(self.apoyo_caja_menor_gui )
-        self.boton_abonar.clicked.connect(self.abono_gui)
-        self.boton_vender_empaques.clicked.connect(self.venta_empaques_gui)       
+        self.boton_comprar_alimento_2.clicked.connect(self.comprar_alimento_gui)
+        self.boton_fiar_costales_2.clicked.connect(self.credito_caja_menor_gui)
+        self.boton_ingresar_limon.clicked.connect(self.venta_limon_gui)
+        self.boton_gastar_alimento.clicked.connect(self.alimentar_gallinas_gui)
 
-        self.boton_gastar_alimento.clicked.connect(self.gastar_alimento_gui)
-        self.boton_devolver_alimento.clicked.connect(self.devolver_alimento_gui)
+        self.boton_egrasar_limon.clicked.connect(self.egreso_limon_gui)
+        self.boton_reiniciar_limon.clicked.connect(self.reiniciar_limon_gui)
 
-        self.boton_venta_limon.clicked.connect(self.agregar_limon)
-        self.boton_gasto_limon.clicked.connect(self.sacar_limon)
+        self.boton_ingresar_cacao.clicked.connect(self.venta_cacao_gui)
+        self.boton_egresar_cacao.clicked.connect(self.egreso_cacao_gui)
+        self.boton_reinicio_cacao.clicked.connect(self.reiniciar_cacao_gui)
 
-        self.boton_venta_cacao.clicked.connect(self.agregar_cacao)
-        self.boton_gasto_cacao.clicked.connect(self.sacar_cacao)
+
+        self.boton_ingresar_fletes.clicked.connect(self.venta_fletes_gui)
+        self.boton_egresar_flete.clicked.connect(self.egreso_fletes_gui)
+        self.boton_reiniciar_fletes.clicked.connect(self.reiniciar_fletes_gui)
+        self.boton_agregar__pollos.clicked.connect(self.comprar_pollos_gui)
+        self.boton_dar_baja__pollos.clicked.connect(self.dar_baja_pollos)
+        self.boton_invertir_caja_menor_4.clicked.connect(self.apoyo_caja_menor_pollos)
+        self.boton_invertir_caja_menor_5.clicked.connect(self.enviar_banco_pollos)
+        self.boton_vender_pollos.clicked.connect(self.vender_produccion_pollos)
+        self.boton_fiar_costales_4.clicked.connect(self.fiar_comida_pollos)
         
-        self.boton_venta_flete.clicked.connect(self.agregar_fletes)
-        self.boton_gasto_flete.clicked.connect(self.sacar_fletes)
+        self.tipo_produccion_14.currentIndexChanged.connect(self.actualizar_deuda_pollos)
+        self.tipo_produccion_4.currentIndexChanged.connect(self.actualizar_deuda_gallinas)
         
-        self.boton_agregar__pollos.clicked.connect(self.agregar_pollos)
-        self.boton_dar_baja__pollos.clicked.connect(self.eliminar_pollos)
-        self.boton_vender_pollos.clicked.connect(self.vender_pollos)
-        self.boton_gastar_pollos.clicked.connect(self.gastos_pollos)
         self.boton_comprar_alimento_4.clicked.connect(self.comprar_alimento_pollos)
-        self.boton_gastar_alimento_3.clicked.connect(self.gastar_alimento_pollos_gui)
-        self.boton_vender_pollos_2.clicked.connect(self.vender_empaques_pollos)
-        self.boton_gastar_pollos_2.clicked.connect(self.reiniciar)
-#-------------------------------------------------------------------------------
-#------------------------------funciones internas-------------------------------
+        self.boton_vender_empaques_3.clicked.connect(self.abonar_san_alejo_pollos)
+        self.boton_vender_empaques_8.clicked.connect(self.abonar_agropaisa_pollos)
+        self.boton_gastar_pollos_5.clicked.connect(self.gastos_generales_pollos)
+        self.boton_gastar_alimento_4.clicked.connect(self.gasto_alimento_pollos)
+        self.boton_devolver_alimento_3.clicked.connect(self.devolver_bultos_pollos)
+        self.boton_gastar_pollos_2.clicked.connect(self.reiniciar_gui_pollos)
+        self.boton_comprar_caja_menor.clicked.connect(self.gastos_generales_gallinas)
+        self.boton_fiar_caja_menor.clicked.connect(self.credito_general_gallinas)
+        self.boton_invertir_caja_menor.clicked.connect(self.apoyo_caja_menor_gallinas)
+        self.boton_abonar.clicked.connect(self.abonar_deuda_gallinas)
+        self.boton_vender_empaques.clicked.connect(self.venta_empaque_gallinas)
+        self.boton_vender_empaques_2.clicked.connect(self.enviar_banco_gallinas)
+        self.boton_devolver_alimento.clicked.connect(self.devolver_alimento_gallinas)
 
-    def inicizalizar_graficas(self):
-        self.graphicsView_2.setBackground('#3c3f58')
-        self.graphicsView_3.setBackground('#3c3f58')
-        self.graphicsView_4.setBackground('#3c3f58')
-        self.graphicsView_5.setBackground('#3c3f58')
-        self.graphicsView_6.setBackground('#3c3f58')
-        self.graphicsView_7.setBackground('#3c3f58')
-        self.compra_alimento_pollos.setBackground('#3c3f58')
-        self.gasto_alimento_pollos.setBackground('#3c3f58')
-        
-        self.graphicsView_2.showGrid(x=True, y=True,alpha=0.2)
-        self.graphicsView_3.showGrid(x=True, y=True,alpha=0.2)
-        self.graphicsView_4.showGrid(x=True, y=True,alpha=0.2)
-        self.graphicsView_5.showGrid(x=True, y=True,alpha=0.2)
-        self.graphicsView_6.showGrid(x=True, y=True,alpha=0.2)
-        self.graphicsView_7.showGrid(x=True, y=True,alpha=0.2)
-        self.compra_alimento_pollos.showGrid(x=True, y=True,alpha=0.2)
-        self.gasto_alimento_pollos.showGrid(x=True, y=True,alpha=0.2)
-        
-        self.graphicsView_2.setLabels(title='Rendimiento historico pollitas', left='PORCENTAJE')
-        self.graphicsView_3.setLabels(title='Rendimiento historico gallinas', left='PORCENTAJE')
-        self.graphicsView_4.setLabels(title='Alimentacion historica porllitas', left='BULTOS')
-        self.graphicsView_5.setLabels(title='Alimentacion historica gallinas', left='BULTOS')
-        self.graphicsView_6.setLabels(title='GANANCIAS ACUMULADAS POR SEMANAS', left='MILLONES')
-        self.graphicsView_7.setLabels(title='GANANCIAS ACUMULADAS POR MES ', left='MILLONES')
-        self.compra_alimento_pollos.setLabels(title='Compra de alimento', left='BULTOS')
-        self.gasto_alimento_pollos.setLabels(title='Consumo de alimento', left='BULTOS')
-        
-#-------------------------------------------------------------------------------
-    def limpiar_graficas_rendimiento(self):
-        self.graphicsView_2.clear()
-        self.graphicsView_3.clear()
-        self.graphicsView_4.clear()
-        self.graphicsView_5.clear()
-        self.graphicsView_6.clear()
-        self.graphicsView_7.clear()
-        self.compra_alimento_pollos.clear()
-        self.gasto_alimento_pollos.clear()
+
 
 #-------------------------------------------------------------------------------
 
     def actualizar_interfaz(self):
-
-        self.actualizar_produccion()
-        self.inicizalizar_graficas()
-        self.actualizar_inventario()
-        self.actualizar_numero_animales()
-        self.actualizar_rendimiento_diario()
-        self.graficar_rendimiento_historico()
-        self.actualizar_tabla_caja_menor()
-        self.actualizar_saldos()
-        self.actualizar_alimento()
-        self.graficar_alimentacion()
-        self.actualizar_tabla_limon()
-        self.actualizar_tabla_caco()
-        self.actualizar_tabla_flete()
-        self.actualizar_dinero_pollos()
-        self.actualizar_tabla_pollo()
-        self.actualizar_alimento_mortalidad()
-        self.actulizar_alimento_pollos()
-        self.actualizar_empaques_pollos()
-        self.actualizar_graficas_pollos()
-        self.actualizar_ganacias()
-    
+        self.actualizar_gui_gallinas()
+        self.actualizar_gui_limon()
+        self.actualizar_gui_cacao()
+        self.actualizar_gui_fletes()
+        self.actualizar_gui_pollos()
 #-------------------------------------------------------------------------------
-#---------------------------------produccion-----------------------------------
+# #---------------------------------produccion-----------------------------------
+    def validar_numeros(self,*numeros):
+        for numero in numeros:
+            numero = str(numero)
+            if (not numero.isnumeric()):
+                return False
+            if (int(numero)<0):
+                return False 
+        return True
+#-------------------------------------------------------------------------------
+    def valor_campo(self,campo):
+        valor = campo.text()
+        campo.clear()
+        return valor
 
+#-------------------------------------------------------------------------------
     def agregar_produccion_gui(self):
-        tipos_huevo = ['PIPO','B','A','AA','AAA','JUMBO','BLANCO',
-                        'VENCIDO VENTA','DESTRUIDOS']
+        validacion = self.validar_numeros(self.cubetas_produccion.text(),
+                                       self.sobrantes_produccion.text())
         
-        cubetas = self.cubetas_produccion.text()
-        sobrantes = self.sobrantes_produccion.text()
-        
-        galpon = self.galpon_produccion.currentText()
-        galpon =  1 if(galpon == 'GALLINAS') else 0
-        
-        huevo  = self.tipo_produccion.currentText()
-        huevo = tipos_huevo.index(huevo)
-       
-        if (validar_numeros(cubetas,sobrantes)):
-            self.cubetas_produccion.clear()
-            self.sobrantes_produccion.clear()
-            cubetas , sobrantes = numero_de_cubetas(cubetas,sobrantes)
-            unidades = str(numero_de_unidades(cubetas))
+        if(validacion):
+            cubeta = self.valor_campo(self.cubetas_produccion)
+            sobrantes = self.valor_campo(self.sobrantes_produccion)
+            huevo  = self.tipo_produccion.currentText()
+            agregar_huevos(huevo,int(cubeta),int(sobrantes))
 
-            agregar_huevos(galpon,huevo,unidades,str(cubetas),str(sobrantes))
         self.actualizar_interfaz()
 
+#-------------------------------------------------------------------------------
     def eliminar_produccion_gui(self):
-        tipos_huevo = ['PIPO','B','A','AA','AAA','JUMBO','BLANCO',
-                        'VENCIDO VENTA','DESTRUIDOS']
+        validacion = self.validar_numeros(self.cubetas_produccion.text(),
+                                       self.sobrantes_produccion.text())
         
-        cubetas = self.cubetas_produccion.text()
-        sobrantes = self.sobrantes_produccion.text()
-        
-        galpon = self.galpon_produccion.currentText()
-        galpon =  1 if(galpon == 'GALLINAS') else 0
-        
-        huevo  = self.tipo_produccion.currentText()
-        huevo = tipos_huevo.index(huevo)
-       
-        if (validar_numeros(cubetas,sobrantes)):
-            self.cubetas_produccion.clear()
-            self.sobrantes_produccion.clear()
-            cubetas , sobrantes = numero_de_cubetas(cubetas,sobrantes)
-            unidades = str(numero_de_unidades(cubetas))
-            unidades = '-' + unidades
-            cubetas = '-' + str(cubetas )
-            sobrantes = '-' +str(sobrantes)
-            agregar_huevos(galpon,huevo,unidades,cubetas,sobrantes)
+        if(validacion):
+            huevo  = self.tipo_produccion.currentText()
+            cantidad = int(cantidad_huevos_tipo(huevo))
+            cubeta = int(self.valor_campo(self.cubetas_produccion))
+            sobrantes = int(self.valor_campo(self.sobrantes_produccion))
+            
+            if(cantidad>=(cubeta*30+sobrantes)):
+                eliminar_huevos(huevo,int(cubeta),int(sobrantes))
+            else:
+                self.cubetas_produccion.setText(str(cubeta))
+                self.sobrantes_produccion.setText(str(sobrantes))
         self.actualizar_interfaz()
 
+
+
+#-------------------------------------------------------------------------------
+    def actualizar_gui_gallinas(self):
+        self.actualizar_contabilidad_gallinas() #1
+        self.actualizar_produccion()#2
+        self.actualizar_inventario()#3
+        self.actualizar_numero_animales()#4
+        self.actualizar_rendimiento_diario()#5
+        self.actualizar_bultos_disponibles()#6
+        self.actualizar_costales_gui()#7
+        self.actualizar_deuda_gallinas()#8
+        self.actualizar_tabla_galllinas()#9
+
+#1-------------------------------------------------------------------------------
+    def actualizar_contabilidad_gallinas(self):
+        caja_menor = cantidad_efectivo_gallinas()
+        cupo_endeudamiento = 14000000
+        cupo_endeudamiento -= int(valor_deuda_gallinas('Agropaisa_gallinas'))
+        self.cantidad_efectivo.setText(convertir_pesos(caja_menor))
+        self.cantidad_cupo.setText(convertir_pesos(cupo_endeudamiento))
+
+#2------------------------------------------------------------------------------
     def actualizar_produccion(self):
-        data_produccion = obtener_produccion_diaria()
-
-        tipos_huevo = ['PIPO','B','A','AA','AAA','JUMBO','BLANCO','VENCIDO_VENTA','DESTRUIDOS']
-        presentacion = ['cubeta','unidades','sobrantes']
+        produccion_gallinas = obtener_inventario_huevos_diario()
+        
+        presentacion = ['cubetas','unidades','sobrantes','cantidad']
                 
-        produccion_gallinas = data_produccion[data_produccion['galpon'] == 'POLLITA']
-
         for j,huevo in enumerate(tipos_huevo):
-            produccion_tipo = produccion_gallinas[produccion_gallinas['tipo']==huevo]
-            
+            mascara = produccion_gallinas['producto']==huevo
+            produccion_tipo = produccion_gallinas[mascara]
             elementos = [str(int(produccion_tipo[pres])) for pres in presentacion ]
-            for i in range(0,3):
+            for i in range(0,4):
                 tiem = self.tabla_produccion_diaria.item(j,i)
                 tiem.setText(str(elementos[i]))
         
-        suma_vertical = produccion_gallinas[['cubeta','unidades','sobrantes']].sum()
+        cubeta,unidades,sobrantes,cantidad = cantidad_total_huevos()
+
+        for index,i in enumerate([cubeta,unidades,sobrantes,cantidad]):
+            tiem = self.tabla_produccion_diaria.item(9,index)
+            tiem.setText(str(i))
+
+
+
+#3------------------------------------------------------------------------------
+    def actualizar_inventario(self):
+        produccion_gallinas =obtener_inventario_total()
         
-        for i in range(0,3):
-            tiem = self.tabla_produccion_diaria.item(9,i)
-            tiem.setText(str(suma_vertical[i]))
+        presentacion = ['cubetas','unidades','sobrantes','ventas_del_dia']
+                
+        for j,huevo in enumerate(tipos_huevo):
+            mascara = produccion_gallinas['producto']==huevo
+            produccion_tipo = produccion_gallinas[mascara]
+            elementos = [str(int(produccion_tipo[pres])) for pres in presentacion ]
+            for i in range(0,4):
+                tiem = self.tabla_inventario.item(j,i)
+                tiem.setText(str(elementos[i]))
+        
+        cubeta,unidades,sobrantes,cantidad = inventario_total_huevos()
+
+        for index,i in enumerate([cubeta,unidades,sobrantes,cantidad]):
+            tiem = self.tabla_inventario.item(9,index)
+            tiem.setText(str(i))
+
+#4------------------------------------------------------------------------------
+    def actualizar_numero_animales(self):
+        numero  = cantidad_gallinas()
+        self.Empaques_gallinas_dis_2.setText(str(numero))
+
+#5-------------------------------------------------------------------------------
+    def actualizar_rendimiento_diario(self):
+        rendimiento =float(rendimiento_gallinas())
+        if (rendimiento<=1):
+            self.rendimiento_gallinas.setValue(float(rendimiento)*100)
+        else :
+            self.rendimiento_gallinas.setValue(100)
+#6------------------------------------------------------------------------------
+    def actualizar_bultos_disponibles(self):
+        cantidad = cantidad_bultos()
+        self.bultos_gallinas_dis.setText(str(cantidad))
+
+#7------------------------------------------------------------------------------
+    def actualizar_costales_gui(self):
+        cantidad_empaques = cantidad_costales() 
+        self.Empaques_gallinas_dis.setText(str(cantidad_empaques))
+
+#8------------------------------------------------------------------------------
+    def actualizar_deuda_gallinas(self):
+        entidad = self.tipo_produccion_4.currentText()
+        valor = valor_deuda_gallinas(entidad+'_gallinas')
+        self.cantidad_deuda_3.setText(convertir_pesos(valor))
+
+#9------------------------------------------------------------------------------
+    def actualizar_tabla_galllinas(self):
+        df = transaccion_gallinas()
+        
+        for j in range(7) :
+            for i in range(3) :
+                    tiem = self.tabla_caja_menor.item(j,i)
+                    tiem.setText(str((0)))
+        
+        
+        for j,elementos in enumerate(df.itertuples()) :
+            for i,elemento in enumerate(elementos[1:]) :
+                    tiem = self.tabla_caja_menor.item(j,i)
+                    tiem.setText(str((elemento)))
+
+
+# # #-------------------------------------------------------------------------------
+# # #---------------------------------Ventas----------------------------------------
+    def agregar_venta_gui(self):
+        validacion = self.validar_numeros(self.cantidad_venta.text(),
+                                       self.precio_venta.text())
+        
+        if(validacion):
+            huevo  = self.tipo_venta.currentText()
+            presentacion = self.presentacion_venta.currentText()
+            observacion = self.comentario_venta.toPlainText()
+            precio = int(self.valor_campo(self.precio_venta))
+            cantidad = int(self.valor_campo(self.cantidad_venta))
+
+            total = cantidad*30 if (presentacion == 'CUBETAS') else cantidad
             
-        produccion_gallinas = data_produccion[data_produccion['galpon'] == 'GALLINA']
-        for j,huevo in enumerate(tipos_huevo):
-                produccion_tipo = produccion_gallinas[produccion_gallinas['tipo']==huevo]
-                
-                elementos = [str(int(produccion_tipo[pres])) for pres in presentacion ]
-                for i in range(4,7):
-                    tiem = self.tabla_produccion_diaria.item(j,i)
-                    tiem.setText(str(elementos[i-4]))
-                
-        suma_vertical = produccion_gallinas[['cubeta','unidades','sobrantes']].sum()
-        
-        for i in range(0,3):
-            tiem = self.tabla_produccion_diaria.item(9,i+4)
-            tiem.setText(str(suma_vertical[i]))
-                
-        
-        data_produccion['total'] = data_produccion['unidades']+data_produccion['sobrantes']
-        data_produccion = data_produccion.groupby('tipo').sum().reset_index()
-        total_huevos_dia = data_produccion['total'].sum()
+            disponibles = int(cantidad_huevos_inventario(huevo))
+            
+            if(int(disponibles)>=int(total)):
+                agregar_venta(presentacion,huevo,cantidad,precio,observacion)
+                self.comentario_venta.clear()
+            else:
+                self.cantidad_venta.setText(str(cantidad))
+                self.precio_venta.setText(str(precio))
 
-        for j,huevo in enumerate(tipos_huevo):
-            total_fila = data_produccion[data_produccion['tipo']==huevo]
-            tiem = self.tabla_produccion_diaria.item(j,7)
-            tiem.setText(str(int(total_fila['total'])))
-
-        tiem = self.tabla_produccion_diaria.item(9,7)
-        tiem.setText(str(total_huevos_dia))
+        self.actualizar_gui_gallinas()
 
 # #-------------------------------------------------------------------------------
-# #---------------------------------Ventas----------------------------------------
-
-    def agregar_venta_gui(self):
-        cantidad = self.cantidad_venta.text()
-        precio = self.precio_venta.text()
-        observaciones = self.comentario_venta.toPlainText()
-        presentacion = self.presentacion_venta.currentText()
-        tipo = self.tipo_venta.currentText()
-
-        presentaciones = ['CUBETAS','SOBRANTES']
-
-        tipos_huevo = ['PIPO','B','A','AA','AAA','JUMBO','BLANCO',
-                        'VENCIDO VENTA','DESTRUIDOS']
-        
-        presentacion = presentaciones.index(presentacion)
-        huevo = tipos_huevo.index(tipo)
-
-        if(validar_numeros(cantidad,precio)):
-            total = str(int(precio)*int(cantidad))
-            self.cantidad_venta.clear()
-            self.precio_venta.clear()
-            self.comentario_venta.clear()
-             
-            if(presentacion == 0):
-                unidades = str(int(cantidad)*30)
-                agregar_venta(huevo,unidades,cantidad,'0',total,observaciones)
-            elif(presentacion == 1):
-                agregar_venta(huevo,'0','0',cantidad,total,observaciones)
-            # Comentada para cuando venda
-            elif(presentacion == 2):
-                agregar_venta(huevo,'0','0',cantidad,total,observaciones)
-            else :
-                pass
-
-            entrada_contabilidad(str(cantidad),str(total))
-            registro_caja('venta de huevos : ',str(total))
-        self.actualizar_interfaz()
-
-#-------------------------------------------------------------------------------
     def devolver_venta_gui(self):
-        cantidad = self.cantidad_venta.text()
-        precio = self.precio_venta.text()
-        observaciones = self.comentario_venta.toPlainText()
-        presentacion = self.presentacion_venta.currentText()
-        tipo = self.tipo_venta.currentText()
-
-        presentaciones = ['CUBETAS','SOBRANTES']
-
-        tipos_huevo = ['PIPO','B','A','AA','AAA','JUMBO','BLANCO',
-                        'VENCIDO VENTA','DESTRUIDOS']
+        validacion = self.validar_numeros(self.cantidad_venta.text(),
+                                       self.precio_venta.text())
         
-        presentacion = presentaciones.index(presentacion)
-        huevo = tipos_huevo.index(tipo)
+        if(validacion):
+            huevo  = self.tipo_venta.currentText()
+            presentacion = self.presentacion_venta.currentText()
+            observacion = self.comentario_venta.toPlainText()
+            precio = int(self.valor_campo(self.precio_venta))
+            cantidad = int(self.valor_campo(self.cantidad_venta))
 
-        if(validar_numeros(cantidad,precio)):
-            total = str(int(precio)*int(cantidad))
-            self.cantidad_venta.clear()
-            self.precio_venta.clear()
-            self.comentario_venta.clear()
-             
-            if(presentacion == 0):
-                    unidades = str(int(cantidad)*30)
-                    agregar_venta(huevo,'-'+unidades,'-'+cantidad,'0','-'+total,observaciones)
-            elif(presentacion == 1):
-                    agregar_venta(huevo,'0','0', '-'+cantidad,'-'+total,observaciones)
-            # Comentada para cuando venda
-            elif(presentacion == 2):
-                    agregar_venta(huevo,'0','0',cantidad,total,observaciones)
+            devolucion_venta(presentacion,huevo,cantidad,precio,observacion)
+            
+            self.actualizar_gui_gallinas()
 
-            registro_caja('Devolucion venta','-'+str(total))
-            entrada_contabilidad(str(cantidad),'-'+str(total))
-        self.actualizar_interfaz()
+
+
+
+
+
+
+
+
+
+
+
+
 
 #-------------------------------------------------------------------------------
-    def actualizar_inventario(self):
-        produccion_gallinas = inventario()
-        ventas = venta_acumulada_dia()
-        venta_acumulada_total = venta_acumulada()
+#-------------------------------------------------------------------------------
+    def gastos_generales_gallinas(self):
+        cantidad = self.cantidad_dinero_caja 
+        observacion = self.motivo_gasto
 
-        for j,huevo in enumerate(tipos_huevo):
-            produccion_tipo = produccion_gallinas[produccion_gallinas['tipo']==huevo]
-            venta = ventas[ventas['tipo'] == huevo]
-            acumulada = venta_acumulada_total[venta_acumulada_total['tipo'] == huevo]
-            cubeta= str(int(produccion_tipo['cubeta']))
-            unidades=str(int(produccion_tipo['unidades']))
-            sobrantes=str(int(produccion_tipo['sobrantes']))
-            venta=str(int(venta['precio']))
-            acum = str(int(acumulada['precio']))
+        validacion = self.validar_numeros(cantidad.text())
 
-            item_unidades = QTableWidgetItem()
-            item_unidades.setText(unidades)
-            self.tabla_inventario.setItem(j,1,item_unidades)
+        if(validacion):
+            cantidad = int(self.valor_campo(cantidad))
+            caja_menor = int(cantidad_efectivo_gallinas())
             
-            item_cubeta = QTableWidgetItem()
-            item_cubeta.setText(cubeta)
-            self.tabla_inventario.setItem(j,0,item_cubeta)
-            
-            item_sobrantes = QTableWidgetItem()
-            item_sobrantes.setText(sobrantes)
-            self.tabla_inventario.setItem(j,2,item_sobrantes)
-            
-            item_venta = QTableWidgetItem()
-            item_venta.setText(venta)
-            self.tabla_inventario.setItem(j,3,item_venta)
+            if(caja_menor>=cantidad):
+                motivo = observacion.toPlainText()
+                observacion.clear()
+                compra_aux_gallinas(int(cantidad),motivo)
+            else :
+                self.cantidad_dinero_caja.setText(str(cantidad))
+
+        self.actualizar_gui_gallinas()
     
-            item_acum = QTableWidgetItem()
-            item_acum.setText(acum)
-            self.tabla_acumulada.setItem(j,0,item_acum)
-
-        cubeta_total,unidades_total,sobrantes_total = produccion_gallinas[['unidades','cubeta','sobrantes']].sum()
-        venta_total =str(venta_acumulada_total['precio'].sum()) 
-        venta_dia_total = str(ventas['precio'].sum())
-
-        item_venta_acum = QTableWidgetItem()
-        item_venta_acum.setText(venta_total)
-        self.tabla_acumulada.setItem(9,0,item_venta_acum)
-        
-        item_cubeta_total = QTableWidgetItem()
-        item_cubeta_total.setText(str(cubeta_total))
-        self.tabla_inventario.setItem(9,1,item_cubeta_total)
-
-        item_unidades_totales = QTableWidgetItem()
-        item_unidades_totales.setText(str(unidades_total))
-        self.tabla_inventario.setItem(9,0,item_unidades_totales)
-
-        item_sobrante_sotal = QTableWidgetItem()
-        item_sobrante_sotal.setText(str(sobrantes_total))
-        self.tabla_inventario.setItem(9,2,item_sobrante_sotal)
-
-        item_venta_dia_total = QTableWidgetItem()
-        item_venta_dia_total.setText(str(venta_dia_total))
-        self.tabla_inventario.setItem(9,3,item_venta_dia_total)
- 
 #-------------------------------------------------------------------------------
-#---------------------------------Rendimiento-----------------------------------
+    def credito_general_gallinas(self):
+        cantidad = self.cantidad_dinero_caja 
+        observacion = self.motivo_gasto
 
-    def agregar_animales_gui(self):
-        galpon = self.galpon_administrar_animales.currentText()
-        cantidad = self.cantidad_animales_editar.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad_animales_editar.clear()
-            if(galpon == 'POLLITA'):
-                    agregar_animales(str(cantidad),'0')
-            elif(galpon == 'GALLINA'):
-                    agregar_animales('0',str(cantidad))
-        self.actualizar_interfaz()
+        validacion = self.validar_numeros(cantidad.text())
 
-    def actualizar_numero_animales(self):
-        pollitas,gallinas = obtener_animales()
-        self.cantidad_pollitas.setText(str(pollitas))
-        self.cantidad_gallinas.setText(str(gallinas))
-        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            motivo = observacion.toPlainText()
+            observacion.clear()
+            
+            credito_aux_gallinas(int(cantidad),motivo)
+
+        self.actualizar_gui_gallinas()
 
 #-------------------------------------------------------------------------------
-    def eliminar_animales_gui(self):
-        galpon = self.galpon_administrar_animales.currentText()
-        cantidad = self.cantidad_animales_editar.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad_animales_editar.clear()
-            if(galpon == 'POLLITA'):
-                    agregar_animales('-'+str(cantidad),'0')
-            elif(galpon == 'GALLINA'):
-                    agregar_animales('0','-'+str(cantidad))
-        self.actualizar_interfaz()
+    def apoyo_caja_menor_gallinas(self):
+        cantidad = self.ingresar_dinero 
+        validacion = self.validar_numeros(cantidad.text())
+
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            
+            apoyo_caja_menor_gallinas(int(cantidad))
+
+        self.actualizar_gui_gallinas()
 
 #-------------------------------------------------------------------------------
-    def actualizar_rendimiento_diario(self):
-        ren_pollitas,ren_gallinas = obtener_rendimiento_diario()
+    def abonar_deuda_gallinas(self):
+        cantidad = self.abonar_dinero 
+        validacion = self.validar_numeros(cantidad.text())
+        entidad = self.tipo_produccion_3.currentText()
 
-        ren_gallinas = int(ren_gallinas*100)
-        ren_pollitas = int(ren_pollitas*100)
+        if(validacion):
+            caja_menor = int(cantidad_efectivo_gallinas())
+            cantidad = int(self.valor_campo(cantidad))
+            deuda = int(valor_deudad_pollos(entidad+'_gallinas'))
+            print(caja_menor,cantidad,deuda)
+            puede_pagar = (cantidad<= caja_menor)
+            paga_de_mas = (cantidad<= deuda)
 
-        self.rendimiento_pollitas.setValue(ren_gallinas)
-        self.rendimiento_gallinas.setValue(ren_pollitas)
+            if(puede_pagar and paga_de_mas):
+                abono_credito_gallinas(int(cantidad),entidad+'_gallinas')
+            else : 
+                self.abonar_dinero.setText(str(cantidad))
+
+        self.actualizar_gui_gallinas()
+
+
+
+
+
+
+
+            
+            
 
 #-------------------------------------------------------------------------------
-    def graficar_rendimiento_historico(self): 
-        rendimiento_pollitas,rendimiento_gallinas = Rendimiento_acumulado()
-        rendimiento_pollitas = rendimiento_pollitas
-        self.limpiar_graficas_rendimiento()
-        self.graphicsView_2.plot(rendimiento_pollitas,fillLevel=0,brush=("#9fccb8"))
-        self.graphicsView_3.plot(rendimiento_gallinas,fillLevel=0,brush=("#9fccb8"))
-        
-#-------------------------------------------------------------------------------
-#---------------------------------CAJA MENOR------------------------------------
+    def venta_empaque_gallinas(self):
+        cantidad = self.cantidad_empaques_venta 
+        precio = self.precio_empaque_venta
 
-    def convertir_a_pesos(self,valor):
-        return str(valor)+ ' PESOS'
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+
+        if(validacion):
+            costales = int(cantidad_costales())
+            cantidad = int(self.valor_campo(cantidad))
+
+            if(cantidad<=costales):
+                precio = int(self.valor_campo(precio))
+
+                venta_empaques(int(cantidad),precio)
+            else :
+                self.cantidad_empaques_venta.setText(str(cantidad))
+
+        self.actualizar_gui_gallinas()
+
 #-------------------------------------------------------------------------------
-    def compra_caja_menor_gui(self):
-        cantidad = self.cantidad_dinero_caja.text()
-        motivo = self.motivo_gasto.toPlainText().replace('\n','')
-        if(validar_numeros(cantidad)):
-                self.cantidad_dinero_caja.clear()
-                self.motivo_gasto.clear()
-                registro_caja('Compra de :'+motivo,'-'+str(cantidad))
-        self.actualizar_interfaz()
+    def enviar_banco_gallinas(self):
+        cantidad = self.precio_empaque_venta_2 
+        validacion = self.validar_numeros(cantidad.text())
+
+        if(validacion):
+            caja_menor = int(cantidad_efectivo_gallinas())
+            cantidad = int(self.valor_campo(cantidad))
+            
+            if(caja_menor>=cantidad):
+                salida_caja_menor(int(cantidad))
+            else: 
+                self.precio_empaque_venta_2.setText(str(cantidad))
+        self.actualizar_gui_gallinas()
 
 #-------------------------------------------------------------------------------
     def comprar_alimento_gui(self):
-        cantidad = self.cantidad_bultos_adquirir.text()
-        precio = self.precio_adquisicion_costal.text()
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_bultos_adquirir.clear()
-            self.precio_adquisicion_costal.clear()
-            ingresar_compra_alimento(cantidad,precio)
-            motivo = 'Compra de '+cantidad +' bultos de alimento a :'+ precio + 'pesos'
-            total = -1*int(cantidad)*int(precio)
-            registro_caja( motivo,str(total))
-            entrada_contabilidad(str(cantidad),str(total))
-
-        self.actualizar_interfaz()
-
-#-------------------------------------------------------------------------------
-    def fiar_alimento_gui(self):
-        cantidad = self.cantidad_bultos_adquirir.text()
-        precio = self.precio_adquisicion_costal.text()
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_bultos_adquirir.clear()
-            self.precio_adquisicion_costal.clear()
-            motivo = 'Credito de '+cantidad +' bultos de alimento a :'+ precio + 'pesos'
-            total = int(cantidad)*int(precio)
+        cantidad = self.cantidad_bultos_adquirir_2
+        precio = self.precio_adquisicion_costal_2
+        condicion = self.validar_numeros(cantidad.text(),precio.text())
+        
+        if(condicion):
+            caja_menor = int(cantidad_efectivo_gallinas())
+            cantidad = int(self.valor_campo(cantidad))
+            precio = int(self.valor_campo(precio))
             
-            ingresar_fiado(motivo,str(total),'1',str(cantidad))
-            entrada_contabilidad(str(cantidad),'-'+str(total))
-        self.actualizar_interfaz()
-
-#------------------------------------------------------------------------------- 
-    def apoyo_caja_menor_gui(self):
-        cantidad = self.ingresar_dinero.text()
-        if(validar_numeros(cantidad)):
-            self.ingresar_dinero.clear()
-            motivo = 'Ingreso desde la caja mayor '+cantidad + 'pesos'
-            registro_caja( motivo,cantidad)
-        self.actualizar_interfaz()
-
-#-------------------------------------------------------------------------------
-    def abono_gui(self):
-        cantidad = self.abonar_dinero.text()
-        if(validar_numeros(cantidad)):
-            self.abonar_dinero.clear()
-            motivo = 'Abono a agropaisa : '+cantidad + 'pesos'
-            registro_caja( motivo,'-'+cantidad)
-            ingresar_fiado('abono','-'+str(cantidad),'0','0')
+            if(caja_menor >= cantidad*precio):
+                comprar_alimento(cantidad,precio)
+            else : 
+                self.cantidad_bultos_adquirir_2.setText(str(cantidad))
+                self.precio_adquisicion_costal_2.setText(str(precio))
+                
         self.actualizar_interfaz()
 
 #-------------------------------------------------------------------------------
     def credito_caja_menor_gui(self):
-        cantidad = self.cantidad_dinero_caja.text()
-        motivo = self.motivo_gasto.toPlainText().replace('\n','')
-        if(validar_numeros(cantidad)):
-                self.cantidad_dinero_caja.clear()
-                self.motivo_gasto.clear()
-                motivo = 'Credito' + motivo
-                ingresar_fiado(motivo,str(cantidad),'0','0')
+        cantidad_bultos = self.cantidad_bultos_adquirir_3
+        costo = self.precio_adquisicion_costal_3
+        banco = self.tipo_produccion_2
+        
+        condicion = self.validar_numeros(cantidad_bultos.text(),costo.text())
+        
+        if(condicion):
+            cantidad = int(self.valor_campo(cantidad_bultos))
+            precio = int(self.valor_campo(costo))
+            entidad = banco.currentText()+'_gallinas'
+            credito_alimento(cantidad,precio,entidad)
+
         self.actualizar_interfaz()
 
 #-------------------------------------------------------------------------------
-    def actualizar_tabla_caja_menor(self):
-        registros_credito = obtener_registro_credito()
-        registros_credito = registros_credito[['fecha','motivo','precio']].tail(4)
+    def alimentar_gallinas_gui(self):
+        cantidad  = self.cantidad_alimento_dado
+
+        condicion = self.validar_numeros(cantidad.text())
         
-        registro_compra = obtener_registro_compras()
-        registro_compra = registro_compra[['fecha','motivo','precio']].tail(4)
-        
-        registro_caja = obtener_registro_caja_mayor()
-        registro_caja.rename(columns = {'cantidad_dinero':'precio'},inplace=True)
-        
-        registros= pd.concat([registros_credito,registro_caja,registro_compra])
-        registros['fecha'] = pd.to_datetime(registros['fecha'])
-        registros = registros.tail(10)
-
-        for i,registro in enumerate(registros['fecha']):
-            item_venta_acum = QTableWidgetItem()
-            item_venta_acum.setText("".join(str(registro).split(' ')[0]))
-            self.tabla_caja_menor.setItem(i,0,item_venta_acum)
-            
-        for i,registro in enumerate(registros['motivo']):
-            item_venta_acum = QTableWidgetItem()
-            item_venta_acum.setText(str(registro))
-            self.tabla_caja_menor.setItem(i,1,item_venta_acum)
-            
-        for i,registro in enumerate(registros['precio']):
-            item_venta_acum = QTableWidgetItem()
-            item_venta_acum.setText(str(registro))
-            self.tabla_caja_menor.setItem(i,2,item_venta_acum)
-            
-#-------------------------------------------------------------------------------
-    def actualizar_saldos(self):
-        efectivo = self.convertir_a_pesos(int(Cantidad_efectivo()))
-        deuda = self.convertir_a_pesos(int(obtener_total_credito()))
-        saldo = self.convertir_a_pesos(15000000 - int(obtener_total_credito()))
-
-        self.cantidad_efectivo.setText(efectivo)
-        self.cantidad_deuda.setText(deuda)
-        self.cantidad_cupo.setText(saldo)
-
-    def venta_empaques_gui(self):
-        cantidad = self.cantidad_empaques_venta.text()  
-        precio = self.precio_empaque_venta.text()
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_empaques_venta.clear()
-            self.precio_empaque_venta.clear()
-            motivo = 'venta empaques'
-            total = int(cantidad)*int(precio)
-            registro_caja(motivo,str(total))
-            venta_empaques(str(cantidad),str(total))
-        self.actualizar_interfaz()
-
-# #-------------------------------------------------------------------------------
-# #--------------------------------------alimento---------------------------------
-    def gastar_alimento_gui(self):
-        galpon = self.galpon_alimentado.currentText()  
-        cantidad = self.cantidad_alimento_dado.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad_alimento_dado.clear()
-            consumo_de_alimento(galpon,cantidad)
-        self.actualizar_interfaz()
-
-    def devolver_alimento_gui(self):
-        galpon = self.galpon_alimentado.currentText()  
-        cantidad = self.cantidad_alimento_dado.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad_alimento_dado.clear()
-            consumo_de_alimento(galpon,'-'+cantidad)
-        self.actualizar_interfaz()
-
-
-    def actualizar_alimento(self):
-        bultos = obtener_cantidad_bultos()
-        costales = cantidad_de_empaques()
-        self.Empaques_gallinas_dis.setText(str(costales))
-        self.bultos_gallinas_dis.setText(str(bultos))
-
-    def graficar_alimentacion(self):
-        historico_alimentacion = obtener_cantidad_bultos_gastados_historico()
-        
-        historico_gallinas = historico_alimentacion[historico_alimentacion['galpon'] == 'GALLINA']
-        historico_pollitas = historico_alimentacion[historico_alimentacion['galpon'] == 'POLLITA']
-        
-        ren_gallinas = historico_gallinas['cantidad']
-        ren_polliras = historico_pollitas['cantidad']
-        
-        self.limpiar_graficas_rendimiento()
-        self.graphicsView_4.plot(list(ren_polliras),fillLevel=0,brush=("#9fccb8"))
-        self.graphicsView_5.plot(list(ren_gallinas),fillLevel=0,brush=("#9fccb8")) 
-        
-    
-#-------------------------------------------------------------------------------
-#------------------------------------Limones -----------------------------------
-
-    def agregar_limon(self):
-        cantidad = self.cantidad_limones_venta.text()
-        precio =self.valor_venta_limon.text()
-        motivo = self.observacion_limon.toPlainText()
-        
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_limones_venta.clear()
-            self.valor_venta_limon.clear()
-            self.observacion_limon.clear()
-            motivo = 'venta de : '+str(cantidad) +' Canastillas'
-            total = int(cantidad)*int(precio)
-            agregar_venta_limon(motivo,str(cantidad),str(total))
-        self.actualizar_interfaz()
-
-
-    def sacar_limon(self):
-        cantidad = self.cantidad_gasto_limon.text()
-        motivo = self.concepto_gasto_limon.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad_gasto_limon.clear()
-            self.concepto_gasto_limon.clear()
-            motivo =  motivo
-            total = -1*int(cantidad)
-            agregar_venta_limon(motivo,str(cantidad),str(total))
-        
-        self.actualizar_interfaz()
-
-    
-    def actualizar_tabla_limon(self):
-        df = registro_limones()
-        df['precio'] = pd.to_numeric(df['precio'] )
-        
-        ingresos = df[df['precio']>0]
-        ingresos = int(ingresos['precio'].sum())
-        
-        egresos = df[df['precio']<0]
-        egresos = int(egresos['precio'].sum())
-        
-        saldo = ingresos + egresos
-        
-        self.valor_ingreso_limon.setText(str(ingresos)+ ' PESOS')
-        self.valor_egreso_limon.setText(str(egresos)+ ' PESOS')
-        self.valor_saldo_limon.setText(str(saldo)+ ' PESOS')
-        
-        if(df.shape[0]>14):
-            df = df.tail(14).reset_index()
-      
-        for i,row in df.iterrows():
-            celda = self.tabla_caja_menor_2.item(i,0)
-            celda.setText(str(row['fecha']))
-            
-            celda = self.tabla_caja_menor_2.item(i,1)
-            celda.setText(str(row['motivo']))
-            
-            celda = self.tabla_caja_menor_2.item(i,2)
-            celda.setText(str(row['precio']))
-
-# #-------------------------------------------------------------------------------
-# #------------------------------------Cacao -----------------------------------
-    def agregar_cacao(self):
-        cantidad = self.cantidad_cacao_venta.text()
-        precio =self.valor_venta_cacao.text()
-        motivo = self.observacion_cacao.toPlainText()
-
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_cacao_venta.clear()
-            self.valor_venta_cacao.clear()
-            self.observacion_cacao.clear()
-            motivo = 'venta de : ' +str(cantidad) +' kilos'
-            total = int(cantidad)*int(precio)
-            agregar_venta_cacao(motivo,str(cantidad),str(total))
-        self.actualizar_interfaz()
-
-
-    def sacar_cacao(self):
-        cantidad = self.cantidad_gasto_cacao.text()
-        motivo = self.concepto_gasto_cacao.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad_gasto_cacao.clear()
-            self.concepto_gasto_cacao.clear()
-            motivo =  motivo
-            total = -1*int(cantidad)
-            agregar_venta_cacao(motivo,str(cantidad),str(total))
-        
-        self.actualizar_interfaz()
-
-    
-    def actualizar_tabla_caco(self):
-        df = registro_cacao()
-        df['precio'] = pd.to_numeric(df['precio'] )
-        
-        ingresos = df[df['precio']>0]
-        ingresos = int(ingresos['precio'].sum())
-
-        egresos = df[df['precio']<0]
-        egresos = int(egresos['precio'].sum())
-        
-        saldo = ingresos + egresos
-
-        self.valor_ingreso_cacao.setText(str(ingresos)+ ' PESOS')
-        self.valor_egreso_cacao.setText(str(egresos)+ ' PESOS')
-        self.valor_saldo_cacao.setText(str(saldo)+ ' PESOS')
-
-        if(df.shape[0]>14):
-            df = df.tail(14).reset_index()
-      
-        for i,row in df.iterrows():
-            celda = self.tabla_caja_menor_3.item(i,0)
-            celda.setText(str(row['fecha']))
-            
-            celda = self.tabla_caja_menor_3.item(i,1)
-            celda.setText(str(row['motivo']))
-            
-            celda = self.tabla_caja_menor_3.item(i,2)
-            celda.setText(str(row['precio']))
-
-    
-
-# #-------------------------------------------------------------------------------
-# #--------------------------------------fletes-----------------------------------
-    def agregar_fletes(self):
-        cantidad = self.cantidad_flete_venta_5.text()
-        precio =self.valor_venta_flete.text()
-        motivo = self.observacion_flete.toPlainText()
-        
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_flete_venta_5.clear()
-            self.valor_venta_flete.clear()
-            self.observacion_flete.clear()
-            motivo = 'se realizaron  : ' +str(cantidad) +' fletes'
-            total = int(cantidad)*int(precio)
-            agregar_venta_fletes(motivo,str(cantidad),str(total))
-        
-        self.actualizar_interfaz()
-
-
-    def sacar_fletes(self):
-        
-        cantidad = self.cantidad_gasto_flete.text()
-        motivo = self.concepto_gasto_flete.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad_gasto_flete.clear()
-            self.concepto_gasto_flete.clear()
-            motivo =  motivo
-            total = -1*int(cantidad)
-            agregar_venta_fletes(motivo,str(cantidad),str(total))
-        
-        self.actualizar_interfaz()
-
-    
-    def actualizar_tabla_flete(self):
-        df = registro_fletes()
-        df['precio'] = pd.to_numeric(df['precio'] )
-        
-        ingresos = df[df['precio']>0]
-        ingresos = int(ingresos['precio'].sum())
-        
-        egresos = df[df['precio']<0]
-        egresos = int(egresos['precio'].sum())
-        
-        saldo = ingresos + egresos
-        
-        self.valor_ingreso_flete.setText(str(ingresos)+ ' PESOS')
-        self.valor_egreso_flete.setText(str(egresos)+ ' PESOS')
-        self.valor_saldo_flete.setText(str(saldo)+ ' PESOS')
-
-        if(df.shape[0]>14):
-            df = df.tail(14).reset_index()
-      
-        for i,row in df.iterrows():
-            celda = self.tabla_caja_menor_4.item(i,0)
-            celda.setText(str(row['fecha']))
-            
-            celda = self.tabla_caja_menor_4.item(i,1)
-            celda.setText(str(row['motivo']))
-            
-            celda = self.tabla_caja_menor_4.item(i,2)
-            celda.setText(str(row['precio']))
-
-# #-------------------------------------------------------------------------------
-# #-----------------------------------pollos-------------------------------------
-
-    def agregar_pollos(self):
-        cantidad = self.cantidad__pollos.text()
-        precio =self.precio_pollos.text()
-        
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad__pollos.clear()
-            self.precio_pollos.clear()
-            motivo = 'Compra pollitos' 
-            total = -1*int(precio)*int(cantidad)
-            agregar_venta_pollos(motivo,str(cantidad),str(total),'0')
-        
-        self.actualizar_interfaz()
-
-    def eliminar_pollos(self):
-        cantidad = self.cantidad__pollos_2.text()
-        if(validar_numeros(cantidad)):
-            self.cantidad__pollos_2.clear()
-            self.precio_pollos.clear()
-            motivo = 'Dar de baja pollitos' 
-            agregar_venta_pollos(motivo,'-'+str(cantidad),'0','0')
-        self.actualizar_interfaz()
-
-    def vender_pollos(self):
-        cantidad = self.cantidad_kilos__pollos.text()
-        precio = self.precio_kilo_pollos.text()
-
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_kilos__pollos.clear()
-            self.precio_kilo_pollos.clear()
-            
-            motivo = 'venta de : '+ str(cantidad) +' Kilos de pollo' 
-            total = int(precio)*int(cantidad)
-            agregar_venta_pollos(motivo,str(cantidad),str(total),'1')
-    
-        self.actualizar_interfaz()
-
-
-    def gastos_pollos(self):
-    
-        cantidad = self.cantidad_gastado_pollos.text()
-        motivo = self.concepto_compra_pollos.text()
-
-        if(validar_numeros(cantidad)):
-            self.cantidad_gastado_pollos.clear()
-            self.concepto_compra_pollos.clear()
-            
-            motivo = 'gasto pollo : '+ motivo 
-            total = -1*int(cantidad)
-            agregar_venta_pollos(motivo,str(0),str(total),'1')
-        self.actualizar_interfaz()
-    
-    def actualizar_dinero_pollos (self):
-        ingresos,egresos,saldo = valores_pollos()
-
-        self.valor_ingreso_pollos.setText(str(ingresos)+ ' PESOS')
-        self.valor_egreso__pollos.setText(str(egresos)+ ' PESOS')
-        self.valor_saldo__pollos.setText(str(saldo)+ ' PESOS')
-   
-    def actualizar_alimento_mortalidad(self):
-        df = registro_pollos()
-        df = df[df['tipo']== 0]
-        
-        if(df.shape[0]<1):
-            cantidad_pollos_comprados = 0
-            cantidad_pollos_muertos = 0
-            cantidad_pollos_vivos = 0
-            mortalidad = 0
-        else :
-            cantidad_pollos_comprados = df[df['cantidad']>0] 
-            cantidad_pollos_comprados = int(cantidad_pollos_comprados['cantidad'].sum())
-        
-            cantidad_pollos_muertos = df[df['cantidad']<0]
-            cantidad_pollos_muertos = int(cantidad_pollos_muertos['cantidad'].sum())
-
-            cantidad_pollos_vivos = cantidad_pollos_comprados+cantidad_pollos_muertos
-            
-            if(cantidad_pollos_comprados == 0):
-                mortalidad = 0
-            
+        if(condicion):
+            bultos = int(cantidad_bultos())
+            cantidad = int(self.valor_campo(cantidad))
+            if(bultos>= cantidad):
+               alimentar_gallinas(cantidad)
             else :
-                mortalidad = -cantidad_pollos_muertos/cantidad_pollos_comprados
-
-            mortalidad = round(mortalidad*100,3)
-        
-        self.cantidad_pollos_galpon.setText(str(cantidad_pollos_vivos))
-        self.indice_mortalidad_pollos.setText(str(mortalidad)+' % ')
-        
-    def actualizar_tabla_pollo(self):
-        df = registro_pollos()
-
-        for i in range(0,7):
-            celda = self.tabla_pollos.item(i,0)
-            celda.setText(' ')
-            celda = self.tabla_pollos.item(i,1)
-            celda.setText(' ')
-            celda = self.tabla_pollos.item(i,2)
-            celda.setText(' ')
-
-        if(df.shape[0]>7):
-            df = df.tail(7).reset_index()
-
-        for i,row in df.iterrows():
-            celda = self.tabla_pollos.item(i,0)
-            celda.setText(str(row['fecha']))
-            
-            celda = self.tabla_pollos.item(i,1)
-            celda.setText(str(row['motivo']))
-            
-            celda = self.tabla_pollos.item(i,2)
-            celda.setText(str(row['precio']))
+                self.cantidad_alimento_dado.setText(str(cantidad))
+        self.actualizar_interfaz()
 
 #-------------------------------------------------------------------------------
-#--------------------------CONSUMO ALIMENTO POLLOS------------------------------
+    def devolver_alimento_gallinas(self):
+        cantidad  = self.cantidad_alimento_dado
 
+        condicion = self.validar_numeros(cantidad.text())
+        
+        if(condicion):
+            cantidad = int(self.valor_campo(cantidad))
+            empaques = int(cantidad_costales())
+
+            if(cantidad<=empaques):
+                devolver_alimento(cantidad)
+            else:
+                self.cantidad_alimento_dado.setText(str(cantidad))
+
+        self.actualizar_interfaz()
+
+
+#---------------------------------Rendimiento-----------------------------------
+    def agregar_animales_gui(self):
+        numero = self.validar_numeros(self.cantidad_gallinas_gestion.text())
+        if(numero):
+            cantidad = self.valor_campo(self.cantidad_gallinas_gestion)
+            agregar_gallinas(int(cantidad))
+            
+        self.actualizar_interfaz()
+
+#-------------------------------------------------------------------------------
+    def eliminar_animales_gui(self):
+        numero = self.validar_numeros(self.cantidad_gallinas_gestion.text())
+        if(numero):
+            cantidad = self.valor_campo(self.cantidad_gallinas_gestion)
+            if(cantidad_gallinas()>=int(cantidad)):
+                matar_gallinas(int(cantidad))
+            else :
+                self.cantidad_gallinas_gestion.setText(str(cantidad))
+        self.actualizar_interfaz()
+        
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+    def actualizar_limon_gui(self):
+        ingresos,egresos,saldo = contabilidad_limon()
+        efectivo = convertir_pesos(ingresos)
+        egreso = convertir_pesos(egresos)
+        saldo = convertir_pesos(saldo)
+
+        self.ingresos_limon.setText(efectivo)
+        self.egresos_limon.setText(egreso)
+        self.saldo_total_limones.setText(saldo)
+
+#-------------------------------------------------------------------------------
+    def venta_limon_gui(self):
+        cantidad = self.cantidad_limones_venta_6 
+        precio = self.valor_venta_limon_6
+        observacion = self.observacion_limon_6
+
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            precio = self.valor_campo(precio)
+            
+            motivo = observacion.toPlainText()
+            observacion.clear()
+            
+            venta_limon(int(cantidad),int(precio),motivo)
+
+        self.actualizar_gui_limon()
+    
+#-------------------------------------------------------------------------------
+    def egreso_limon_gui(self):
+        _,_,disponible = contabilidad_limon()
+        cantidad = self.cantidad_gasto_limon_6 
+        observacion = self.concepto_gasto_limon_6
+        validacion = self.validar_numeros(cantidad.text())
+
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            if(int(cantidad) <= int(disponible)):            
+                motivo = observacion.text()
+                observacion.clear()
+                gastos_limon(int(cantidad),motivo)
+            else :
+                self.cantidad_gasto_limon_6.setText(cantidad)
+        
+        self.actualizar_gui_limon()
+
+#-------------------------------------------------------------------------------
+    def actualizar_tabla_limon(self):
+        df = transacciones_limon()
+        
+        for j in range(14) :
+            for i in range(3) :
+                    tiem = self.tabla_transacciones_limones.item(j,i)
+                    tiem.setText(str((0)))
+        
+        for j,elementos in enumerate(df.itertuples()) :
+            for i,elemento in enumerate(elementos[1:]) :
+                    tiem = self.tabla_transacciones_limones.item(j,i)
+                    tiem.setText(str((elemento)))
+        
+#-------------------------------------------------------------------------------
+    def reiniciar_limon_gui(self):
+        reiniciar_limon()
+        self.actualizar_gui_limon()
+
+    def actualizar_gui_limon(self):
+        self.actualizar_limon_gui()
+        self.actualizar_tabla_limon()
+
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+    def actualizar_saldos_cacao_gui(self):
+        ingresos,egresos,saldo = contabilidad_cacao()
+        efectivo = convertir_pesos(ingresos)
+        egreso = convertir_pesos(egresos)
+        saldo = convertir_pesos(saldo)
+
+        self.ingresos_cacao.setText(efectivo)
+        self.egreso_cacao.setText(egreso)
+        self.saldo_total_cacao.setText(saldo)
+
+#-------------------------------------------------------------------------------
+    def venta_cacao_gui(self):
+        cantidad = self.cantidad_cacao_venta 
+        precio = self.valor_venta_caco
+        observacion = self.observacion_limon_4
+
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            precio = self.valor_campo(precio)
+            
+            motivo = observacion.toPlainText()
+            observacion.clear()
+            
+            venta_cacao(int(cantidad),int(precio),motivo)
+
+        self.actualizar_gui_cacao()
+    
+#-------------------------------------------------------------------------------
+    def egreso_cacao_gui(self):
+        _,_,disponible = contabilidad_cacao()
+        cantidad = self.cantidad_egreso_cacao 
+        observacion = self.concepto_egreso_cacao
+
+        validacion = self.validar_numeros(cantidad.text())
+
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            if(int(cantidad) <= int(disponible)):            
+                motivo = observacion.text()
+                observacion.clear()
+                gastos_cacao(int(cantidad),motivo)
+            else :
+                self.cantidad_egreso_cacao.setText(cantidad)
+        
+        self.actualizar_gui_cacao()
+
+#-------------------------------------------------------------------------------
+    def actualizar_tabla_cacao(self):
+        df = transacciones_cacao()
+        
+        for j in range(14) :
+            for i in range(3) :
+                    tiem = self.tabla_transacciones_cacao.item(j,i)
+                    tiem.setText(str((0)))
+        
+        for j,elementos in enumerate(df.itertuples()) :
+            for i,elemento in enumerate(elementos[1:]) :
+                    tiem = self.tabla_transacciones_cacao.item(j,i)
+                    tiem.setText(str((elemento)))
+        
+#-------------------------------------------------------------------------------
+    def reiniciar_cacao_gui(self):
+        reiniciar_cacao()
+        self.actualizar_gui_cacao()
+
+#-------------------------------------------------------------------------------
+    def actualizar_gui_cacao(self):
+        self.actualizar_saldos_cacao_gui()
+        self.actualizar_tabla_cacao()
+        
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
+    def actualizar_saldos_fletes_gui(self):
+        ingresos,egresos,saldo = contabilidad_fletes()
+        efectivo = convertir_pesos(ingresos)
+        egreso = convertir_pesos(egresos)
+        saldo = convertir_pesos(saldo)
+
+        self.ingresos_fletes.setText(efectivo)
+        self.egresos_fletes.setText(egreso)
+        self.saldo_total_fletes.setText(saldo)
+
+#-------------------------------------------------------------------------------
+    def venta_fletes_gui(self):
+        cantidad = self.cantidad_fletes 
+        precio = self.valor_flete
+        observacion = self.observacion_flete
+
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            precio = self.valor_campo(precio)
+            
+            motivo = observacion.toPlainText()
+            observacion.clear()
+            
+            venta_fletes(int(cantidad),int(precio),motivo)
+
+        self.actualizar_gui_fletes()
+    
+#-------------------------------------------------------------------------------
+    def egreso_fletes_gui(self):
+        _,_,disponible = contabilidad_fletes()
+        cantidad = self.cantidad_egreso_flete 
+        observacion = self.concepto_gasto_limon_7
+
+        validacion = self.validar_numeros(cantidad.text())
+
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            if(int(cantidad) <= int(disponible)):            
+                motivo = observacion.text()
+                observacion.clear()
+                gastos_fletes(int(cantidad),motivo)
+            else :
+                self.cantidad_egreso_flete.setText(cantidad)
+        
+        self.actualizar_gui_fletes()
+
+#-------------------------------------------------------------------------------
+    def actualizar_tabla_fletes(self):
+        df = transacciones_fletes()
+        
+        for j in range(14) :
+            for i in range(3) :
+                    tiem = self.tabla_transacciones_fletes.item(j,i)
+                    tiem.setText(str((0)))
+        
+        for j,elementos in enumerate(df.itertuples()) :
+            for i,elemento in enumerate(elementos[1:]) :
+                    tiem = self.tabla_transacciones_fletes.item(j,i)
+                    tiem.setText(str((elemento)))
+        
+#-------------------------------------------------------------------------------
+    def reiniciar_fletes_gui(self):
+        reiniciar_fletes()
+        self.actualizar_gui_fletes()
+
+    def actualizar_gui_fletes(self):
+        self.actualizar_saldos_fletes_gui()
+        self.actualizar_tabla_fletes()
+
+#-------------------------------------------------------------------------------
+    def actualizar_gui_pollos(self):
+        self.actualizar_caja_pollos()
+        self.actualizar_rendimiento_pollos()
+        self.actualizar_alimento_pollos()
+        self.actualizar_deuda_pollos()
+        self.actualizar_tabla_pollos()
+
+#-------------------------------------------------------------------------------
+    def actualizar_caja_pollos(self):
+        ingresos,egresos,saldo = contabilidad_pollos()
+        self.valor_ingreso_limon_8.setText(convertir_pesos(ingresos))
+        self.valor_egreso_limon_8.setText(convertir_pesos(egresos))
+        self.valor_saldo_limon_8.setText(convertir_pesos(saldo))
+        self.valor_saldo_limon_9.setText(convertir_pesos(saldo))
+        
+    
+#-------------------------------------------------------------------------------
+    def actualizar_rendimiento_pollos(self):
+        pollos_vivos = cantidad_pollos_vivos()
+        mortalidad = calcular_mortalidad()
+        self.cantidad_pollos_galpon.setText(str(pollos_vivos))
+        self.indice_mortalidad_pollos.setText(str(round(mortalidad,2)))
+
+#-------------------------------------------------------------------------------
+    def actualizar_alimento_pollos(self):
+        cantidad = cantidad_bultos_pollos()
+        self.bultos_gallinas_dis_3.setText(str(cantidad))
+
+#-------------------------------------------------------------------------------
+    def actualizar_deuda_pollos(self):
+        entidad = self.tipo_produccion_14.currentText()
+        valor = valor_deudad_pollos(entidad+'_pollos')
+        self.valor_egreso_limon_9.setText(convertir_pesos(valor))
+
+#-------------------------------------------------------------------------------
+    def comprar_pollos_gui(self):
+        cantidad = self.cantidad__pollos 
+        precio = self.precio_pollos
+        
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            precio = self.valor_campo(precio)
+        
+            compra_pollos(int(cantidad),int(precio))
+
+        self.actualizar_gui_pollos()
+    
+#-------------------------------------------------------------------------------
+    def dar_baja_pollos(self):
+        cantidad = self.cantidad__pollos_2 
+        
+        validacion = self.validar_numeros(cantidad.text())
+        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            if(int(cantidad)<=int(cantidad_pollos_vivos())):
+                matar_pollos(int(cantidad))
+            else:
+                self.cantidad__pollos_2.setText(str(cantidad))
+        
+        self.actualizar_gui_pollos()
+    
+#-------------------------------------------------------------------------------
+    def apoyo_caja_menor_pollos(self):
+        cantidad = self.ingresar_dinero_4 
+        
+        validacion = self.validar_numeros(cantidad.text())
+        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            apoyo_caja_pollo(cantidad)
+        
+        self.actualizar_gui_pollos()
+    
+#-------------------------------------------------------------------------------
+    def enviar_banco_pollos(self):
+        cantidad = self.ingresar_dinero_5 
+        
+        validacion = self.validar_numeros(cantidad.text())
+        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            if(int(cantidad)<=int(cantidad_efectivo_pollos())):
+                enviar_banco_pollos(int(cantidad))
+            else:
+                self.ingresar_dinero_5.setText(str(cantidad))
+        
+        self.actualizar_gui_pollos()
+    
+#-------------------------------------------------------------------------------
+    def vender_produccion_pollos(self):
+        cantidad = self.cantidad_kilos__pollos 
+        precio = self.precio_kilo_pollos
+        
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            precio = self.valor_campo(precio)
+        
+            venta_produccion_pollos(int(cantidad),int(precio))
+
+        self.actualizar_gui_pollos()
+
+#-------------------------------------------------------------------------------
+    def fiar_comida_pollos(self):
+        cantidad = self.cantidad_bultos_adquirir_6 
+        precio = self.precio_adquisicion_costal_6
+        entidad = self.tipo_produccion_13.currentText()
+
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            precio = self.valor_campo(precio)
+        
+            fiar_alimento_pollos(int(cantidad),int(precio),entidad+'_pollos')
+
+        self.actualizar_gui_pollos()
+
+#-------------------------------------------------------------------------------
     def comprar_alimento_pollos(self):
-        cantidad = self.cantidad_bultos_adquirir_4.text()
-        precio = self.precio_adquisicion_costal_4.text()
+        cantidad = self.cantidad_bultos_adquirir_7 
+        precio = self.precio_adquisicion_costal_7
+        
+        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            precio = self.valor_campo(precio)
+        
+            comprar_alimento_pollos(int(cantidad),int(precio))
 
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_bultos_adquirir_4.clear()
-            self.precio_adquisicion_costal_4.clear()
+        self.actualizar_gui_pollos()
+
+#-------------------------------------------------------------------------------
+    def abonar_san_alejo_pollos(self):
+        cantidad = self.precio_empaque_venta_3 
+        
+        validacion = self.validar_numeros(cantidad.text())
+        
+        if(validacion):
+            cantidad = int(self.valor_campo(cantidad))
+            efectvo = int(cantidad_efectivo_pollos())
+            deuda = int(valor_deudad_pollos('San alejo_pollos'))
+
+            puede_pagar = (cantidad<= efectvo)
+            paga_de_mas = (cantidad<= deuda)
             
-            motivo = 'Compra de : '+ str(cantidad) +' bultos de alimento' 
-            total = -1*int(precio)*int(cantidad)
-            agregar_venta_pollos(motivo,str(cantidad),str(total),'2')
-    
-        self.actualizar_interfaz()
-
-    def gastar_alimento_pollos_gui(self):
-        cantidad = self.cantidad_alimento_dado_3.text()
+            if(puede_pagar and paga_de_mas):
+                abonar_deuda_pollos(int(cantidad),'San alejo_pollos')
+            else:
+                self.precio_empaque_venta_3.setText(str(cantidad))
         
-        if(validar_numeros(cantidad)):
-            self.cantidad_alimento_dado_3.clear()
+        self.actualizar_gui_pollos()
+
+
+#-------------------------------------------------------------------------------
+    def abonar_agropaisa_pollos(self):
+        cantidad = self.precio_empaque_venta_8 
+        
+        validacion = self.validar_numeros(cantidad.text())
+        
+
+        if(validacion):
+            cantidad = int(self.valor_campo(cantidad))
+            efectvo = int(cantidad_efectivo_pollos())
+            deuda = int(valor_deudad_pollos('Agropaisa_pollos'))
+
+            puede_pagar = (cantidad<= efectvo)
+            paga_de_mas = (cantidad<= deuda)
             
-            motivo = 'gasto de : '+ str(cantidad) +' bultos de alimento' 
-            total = 0
-            agregar_venta_pollos(motivo,'-'+str(cantidad),str(total),'2')
-    
-        self.actualizar_interfaz()
-
-    def actulizar_alimento_pollos(self):
-        df = registro_pollos()
-        df = df[df['tipo']== 2]
-       
-        ingresos = df[df['cantidad']>0]
-        ingresos = int(ingresos['cantidad'].sum())
+            if(puede_pagar and paga_de_mas):
+                abonar_deuda_pollos(int(cantidad),'Agropaisa_pollos')
+            else:
+                self.precio_empaque_venta_8.setText(str(cantidad))
         
-        egresos = df[df['cantidad']<0]
-        egresos = int(egresos['cantidad'].sum())
+        self.actualizar_gui_pollos()
 
-        total = ingresos +egresos
-        self.cantidad_cupo_30.setText(str(total))        
+#-------------------------------------------------------------------------------
+    def gastos_generales_pollos(self):
+        cantidad = self.cantidad_gastado_pollos_3 
+        concepto = self.concepto_compra_pollos_3
 
-    def  vender_empaques_pollos(self):
-        cantidad = self.cantidad_kilos__pollos_2.text()
-        precio = self.precio_kilo_pollos_2.text()
-       
-        if(validar_numeros(cantidad,precio)):
-            self.cantidad_kilos__pollos_2.clear()
-            self.precio_kilo_pollos_2.clear()
-            
-            motivo = 'venta de : '+ str(cantidad) +' empaques' 
-            total = int(precio)*int(cantidad)
-            agregar_venta_pollos(motivo,str(cantidad),str(total),'3')
-
-        self.actualizar_interfaz()
-
-    def actualizar_empaques_pollos(self):
-        df = registro_pollos()
-        df = df[df['tipo']== 2]
-       
-        egresos = df[df['cantidad']<0]
-        egresos = int(egresos['cantidad'].sum())
-
-        vendidos = registro_pollos().copy()
-        vendidos = vendidos[vendidos['tipo']== 3]
-
-        ventas = vendidos[vendidos['cantidad']>0]
-        ventas = int(ventas['cantidad'].sum())
+        validacion = self.validar_numeros(cantidad.text())
         
-        total = -1*(egresos + ventas)
+        if(validacion):
+            cantidad = self.valor_campo(cantidad)
+            gastos_general_pollos(int(cantidad),concepto.text())
+            concepto.clear()
+        self.actualizar_gui_pollos()
 
-        self.cantidad_cupo_24.setText(str(total))        
+#-------------------------------------------------------------------------------
+    def gasto_alimento_pollos(self):
+        cantidad = self.cantidad_alimento_dado_4 
 
-
-    def actualizar_graficas_pollos(self):
-        df = registro_pollos()
-        df = df[df['tipo']== 2]
-       
-        egresos = df[df['cantidad']<0]
-        egresos = egresos.groupby('fecha').sum().reset_index()
-        egresos = -1*egresos['cantidad']
-
-        ingresos = df[df['cantidad']>0]
-        ingresos = ingresos.groupby('fecha').sum().reset_index()
-        ingresos = ingresos['cantidad']
-
-        self.limpiar_graficas_rendimiento()
-        self.compra_alimento_pollos.plot(ingresos,fillLevel=0,brush=("#9fccb8"))
-        self.gasto_alimento_pollos.plot(egresos,fillLevel=0,brush=("#9fccb8"))
+        validacion = self.validar_numeros(cantidad.text())
         
-    def actualizar_ganacias(self):
-        self.limpiar_graficas_rendimiento()
-        df = calular_ganancia_semanal()
-        
-        ultimos = df['precio']
-        ultimo = df.tail(1)
+        if(validacion):
+            cantidad = int(self.valor_campo(cantidad))
+            if(cantidad<=int(cantidad_bultos_pollos())):
+                gastar_alimento_pollos(int(cantidad))
+            else :
+                self.cantidad_alimento_dado_4.setText(str(cantidad))
+        self.actualizar_costales_gui()
+        self.actualizar_gui_pollos()
 
-        self.cantidad_cupo_15.setText(str(int(ultimo['precio']))+'\nPESOS')
-        self.graphicsView_6.plot(ultimos,fillLevel=0,brush=("#9fccb8"))
-        
-        df = calular_ganancia_mensual()
-        ultimos = df['precio']
-        ultimo = df.tail(1)
-        self.cantidad_cupo_16.setText(str(int(ultimo['precio']))+'\nPESOS')
-        self.graphicsView_7.plot(ultimos,fillLevel=0,brush=("#9fccb8"))
-    
-    def reiniciar(self ):
-        reiniciar_produccion()
-        self.actualizar_interfaz()
+#-------------------------------------------------------------------------------
+    def devolver_bultos_pollos(self):
+        cantidad = self.cantidad_alimento_dado_4 
 
+        validacion = self.validar_numeros(cantidad.text())
+        
+        if(validacion):
+            empaques = int(cantidad_costales())
+            cantidad = int(self.valor_campo(cantidad))
+
+            if(cantidad<=empaques):
+                devolver_alimento_pollos(int(cantidad))
+            else :
+                self.cantidad_alimento_dado_4.setText(str(cantidad))
+        self.actualizar_costales_gui()         
+        self.actualizar_gui_pollos()
+
+    def reiniciar_gui_pollos(self):
+        reiniciar_pollos()
+        self.actualizar_gui_pollos()
+
+#-------------------------------------------------------------------------------
+
+    def actualizar_tabla_pollos(self):
+        df = transaccion_pollos()
+        
+        for j in range(8) :
+            for i in range(3) :
+                    tiem = self.tabla_pollos.item(j,i)
+                    tiem.setText(str((0)))
+        
+        
+        for j,elementos in enumerate(df.itertuples()) :
+            for i,elemento in enumerate(elementos[1:]) :
+                    tiem = self.tabla_pollos.item(j,i)
+                    tiem.setText(str((elemento)))
+#-------------------------------------------------------------------------------
+#-------------------------------------------------------------------------------
 def main():
     app = QtWidgets.QApplication(sys.argv)
     app.setStyle('Fusion')
