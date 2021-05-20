@@ -83,7 +83,6 @@ class Hello_world(Ui_MainWindow):
         self.boton_reiniciar_limon_2.clicked.connect(self.reiniciar_gallinas)
 
 
-
 #-------------------------------------------------------------------------------
 
     def actualizar_interfaz(self):

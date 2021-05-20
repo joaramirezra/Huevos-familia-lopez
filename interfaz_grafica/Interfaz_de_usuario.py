@@ -4264,7 +4264,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(7)
+        self.tabs.setCurrentIndex(2)
         self.tabs_internas.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
