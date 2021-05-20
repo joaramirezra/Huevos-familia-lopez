@@ -48,7 +48,12 @@ def abonar_deuda_pollos(cantidad,entidad):
     motivo = f'abono de {cantidad} pesos a {entidad}'
     escribir_cuentas('pollos','egreso',-cantidad,motivo)
     escribir_cuentas(entidad,'egreso',-cantidad,motivo)
-    
+
+def desabonar_deuda_pollos(cantidad,entidad):
+    motivo = f'Correccion abono de {cantidad} pesos a {entidad}'
+    escribir_cuentas('pollos','ingreso',cantidad,motivo)
+    escribir_cuentas(entidad,'ingreso',cantidad,motivo)
+
 def valor_deudad_pollos(entidad):
     df = obtener_cuentas_productos([entidad])
     if(df.shape[0]==0):

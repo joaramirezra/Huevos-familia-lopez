@@ -27,6 +27,7 @@ class Hello_world(Ui_MainWindow):
         self.actualizar_interfaz()
         self.actualizar_produccion()
         
+        MW.setFixedSize(962, 612)   
         self.boton_agregar_produccion.clicked.connect(self.agregar_produccion_gui)
         self.boton_eliminar_produccion.clicked.connect(self.eliminar_produccion_gui)
         
@@ -76,6 +77,10 @@ class Hello_world(Ui_MainWindow):
         self.boton_vender_empaques.clicked.connect(self.venta_empaque_gallinas)
         self.boton_vender_empaques_2.clicked.connect(self.enviar_banco_gallinas)
         self.boton_devolver_alimento.clicked.connect(self.devolver_alimento_gallinas)
+        self.boton_abonar_4.clicked.connect(self.desabonar_agropaisa_pollos)
+        self.boton_abonar_3.clicked.connect(self.desabonar_san_alejo_pollos)
+        self.boton_abonar_2.clicked.connect(self.desabonar_deuda_gallinas)
+        self.boton_reiniciar_limon_2.clicked.connect(self.reiniciar_gallinas)
 
 
 
@@ -151,7 +156,7 @@ class Hello_world(Ui_MainWindow):
 #1-------------------------------------------------------------------------------
     def actualizar_contabilidad_gallinas(self):
         caja_menor = cantidad_efectivo_gallinas()
-        cupo_endeudamiento = 14000000
+        cupo_endeudamiento = 15000000
         cupo_endeudamiento -= int(valor_deuda_gallinas('Agropaisa_gallinas'))
         self.cantidad_efectivo.setText(convertir_pesos(caja_menor))
         self.cantidad_cupo.setText(convertir_pesos(cupo_endeudamiento))
@@ -163,6 +168,7 @@ class Hello_world(Ui_MainWindow):
         presentacion = ['cubetas','unidades','sobrantes','cantidad']
                 
         for j,huevo in enumerate(tipos_huevo):
+            
             mascara = produccion_gallinas['producto']==huevo
             produccion_tipo = produccion_gallinas[mascara]
             elementos = [str(int(produccion_tipo[pres])) for pres in presentacion ]
@@ -356,7 +362,6 @@ class Hello_world(Ui_MainWindow):
             caja_menor = int(cantidad_efectivo_gallinas())
             cantidad = int(self.valor_campo(cantidad))
             deuda = int(valor_deudad_pollos(entidad+'_gallinas'))
-            print(caja_menor,cantidad,deuda)
             puede_pagar = (cantidad<= caja_menor)
             paga_de_mas = (cantidad<= deuda)
 
@@ -367,9 +372,30 @@ class Hello_world(Ui_MainWindow):
 
         self.actualizar_gui_gallinas()
 
+    def desabonar_deuda_gallinas(self):
+        cantidad = self.abonar_dinero 
+        validacion = self.validar_numeros(cantidad.text())
+        entidad = self.tipo_produccion_3.currentText()
+
+        if(validacion):
+            cantidad = int(self.valor_campo(cantidad))
+            deuda = int(valor_deudad_pollos(entidad+'_gallinas'))
+            
+            tiene_cupo = (cantidad+deuda <= 15000000)
+
+            if(tiene_cupo):
+                desabono_credito_gallinas(int(cantidad),entidad+'_gallinas')
+            else : 
+                self.abonar_dinero.setText(str(cantidad))
+
+        self.actualizar_gui_gallinas()
+
+    def reiniciar_gallinas(self):
+        reiniciar_produccion_gallinas()
+        self.actualizar_gui_gallinas()
 
 
-
+        
 
 
 
@@ -752,7 +778,6 @@ class Hello_world(Ui_MainWindow):
         self.valor_saldo_limon_8.setText(convertir_pesos(saldo))
         self.valor_saldo_limon_9.setText(convertir_pesos(saldo))
         
-    
 #-------------------------------------------------------------------------------
     def actualizar_rendimiento_pollos(self):
         pollos_vivos = cantidad_pollos_vivos()
@@ -830,16 +855,19 @@ class Hello_world(Ui_MainWindow):
     
 #-------------------------------------------------------------------------------
     def vender_produccion_pollos(self):
-        cantidad = self.cantidad_kilos__pollos 
+        cantidad = self.cantidad_kilos__pollos.text()
         precio = self.precio_kilo_pollos
         
-        validacion = self.validar_numeros(cantidad.text(),precio.text())
+        try:
+            float(cantidad)
+            validacion = self.validar_numeros(precio.text())
+        except ValueError:
+            validacion = False
         
         if(validacion):
-            cantidad = self.valor_campo(cantidad)
             precio = self.valor_campo(precio)
-        
-            venta_produccion_pollos(int(cantidad),int(precio))
+            self.cantidad_kilos__pollos.clear()
+            venta_produccion_pollos(float(cantidad),int(precio))
 
         self.actualizar_gui_pollos()
 
@@ -898,11 +926,9 @@ class Hello_world(Ui_MainWindow):
 
 #-------------------------------------------------------------------------------
     def abonar_agropaisa_pollos(self):
-        cantidad = self.precio_empaque_venta_8 
-        
+        cantidad = self.precio_empaque_venta_8        
         validacion = self.validar_numeros(cantidad.text())
         
-
         if(validacion):
             cantidad = int(self.valor_campo(cantidad))
             efectvo = int(cantidad_efectivo_pollos())
@@ -913,6 +939,44 @@ class Hello_world(Ui_MainWindow):
             
             if(puede_pagar and paga_de_mas):
                 abonar_deuda_pollos(int(cantidad),'Agropaisa_pollos')
+            else:
+                self.precio_empaque_venta_8.setText(str(cantidad))
+        
+        self.actualizar_gui_pollos()
+
+#-------------------------------------------------------------------------------
+# #-------------------------------------------------------------------------------
+    def desabonar_san_alejo_pollos(self):
+        cantidad = self.precio_empaque_venta_3 
+        validacion = self.validar_numeros(cantidad.text())
+        
+        if(validacion):
+            cantidad = int(self.valor_campo(cantidad))
+            deuda = int(valor_deudad_pollos('San alejo_pollos'))
+
+            se_puede_devolver = ((deuda+cantidad) <= 15000000 )
+            
+            if(se_puede_devolver):
+                desabonar_deuda_pollos(int(cantidad),'San alejo_pollos')
+            else:
+                self.precio_empaque_venta_3.setText(str(cantidad))
+        
+        self.actualizar_gui_pollos()
+
+
+#-------------------------------------------------------------------------------
+    def desabonar_agropaisa_pollos(self):
+        cantidad = self.precio_empaque_venta_8 
+        validacion = self.validar_numeros(cantidad.text())
+
+        if(validacion):
+            cantidad = int(self.valor_campo(cantidad))
+            deuda = int(valor_deudad_pollos('Agropaisa_pollos'))
+
+            se_puede_devolver = ((deuda+cantidad) <= 15000000 )
+            
+            if(se_puede_devolver):
+                desabonar_deuda_pollos(int(cantidad),'Agropaisa_pollos')
             else:
                 self.precio_empaque_venta_8.setText(str(cantidad))
         
@@ -972,7 +1036,7 @@ class Hello_world(Ui_MainWindow):
     def actualizar_tabla_pollos(self):
         df = transaccion_pollos()
         
-        for j in range(8) :
+        for j in range(9) :
             for i in range(3) :
                     tiem = self.tabla_pollos.item(j,i)
                     tiem.setText(str((0)))
@@ -982,6 +1046,13 @@ class Hello_world(Ui_MainWindow):
             for i,elemento in enumerate(elementos[1:]) :
                     tiem = self.tabla_pollos.item(j,i)
                     tiem.setText(str((elemento)))
+
+    
+        self.tabs.setStyleSheet('QTabBar::tab:selected {'
+                                'color: black;'
+                                'background-color: #a2c07e;'
+                                ' }')
+
 #-------------------------------------------------------------------------------
 #-------------------------------------------------------------------------------
 def main():

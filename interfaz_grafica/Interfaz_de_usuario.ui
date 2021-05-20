@@ -9,7 +9,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>960</width>
+    <width>962</width>
     <height>612</height>
    </rect>
   </property>
@@ -65,7 +65,7 @@ selection-background-color: rgb(138, 226, 52);</string>
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>6</number>
+     <number>7</number>
     </property>
     <property name="iconSize">
      <size>
@@ -1589,10 +1589,10 @@ color: rgb(0, 0, 0);</string>
        <enum>QTabWidget::West</enum>
       </property>
       <property name="tabShape">
-       <enum>QTabWidget::Triangular</enum>
+       <enum>QTabWidget::Rounded</enum>
       </property>
       <property name="currentIndex">
-       <number>1</number>
+       <number>0</number>
       </property>
       <property name="iconSize">
        <size>
@@ -1610,7 +1610,7 @@ color: rgb(0, 0, 0);</string>
           <x>560</x>
           <y>30</y>
           <width>351</width>
-          <height>231</height>
+          <height>211</height>
          </rect>
         </property>
         <property name="layoutDirection">
@@ -1625,11 +1625,20 @@ background-color: rgb(238, 238, 236);</string>
          <enum>Qt::ScrollBarAlwaysOff</enum>
         </property>
         <property name="horizontalScrollBarPolicy">
-         <enum>Qt::ScrollBarAlwaysOff</enum>
+         <enum>Qt::ScrollBarAlwaysOn</enum>
+        </property>
+        <property name="sizeAdjustPolicy">
+         <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
         </property>
         <property name="editTriggers">
          <set>QAbstractItemView::NoEditTriggers</set>
         </property>
+        <property name="wordWrap">
+         <bool>false</bool>
+        </property>
+        <attribute name="horizontalHeaderCascadingSectionResizes">
+         <bool>false</bool>
+        </attribute>
         <attribute name="horizontalHeaderDefaultSectionSize">
          <number>109</number>
         </attribute>
@@ -1680,12 +1689,12 @@ background-color: rgb(238, 238, 236);</string>
         </column>
         <column>
          <property name="text">
-          <string>MOTIVO</string>
+          <string>CANTIDAD</string>
          </property>
         </column>
         <column>
          <property name="text">
-          <string>CANTIDAD</string>
+          <string>MOTIVO</string>
          </property>
         </column>
         <item row="0" column="0">
@@ -2236,7 +2245,7 @@ font: 11pt &quot;Roboto&quot;;</string>
           <rect>
            <x>370</x>
            <y>80</y>
-           <width>151</width>
+           <width>71</width>
            <height>41</height>
           </rect>
          </property>
@@ -2461,6 +2470,31 @@ background-color: rgb(98, 77, 240);</string>
           <set>Qt::AlignCenter</set>
          </property>
         </widget>
+        <widget class="QPushButton" name="boton_abonar_2">
+         <property name="geometry">
+          <rect>
+           <x>450</x>
+           <y>80</y>
+           <width>71</width>
+           <height>41</height>
+          </rect>
+         </property>
+         <property name="font">
+          <font>
+           <family>Roboto</family>
+           <pointsize>8</pointsize>
+           <weight>50</weight>
+           <italic>false</italic>
+           <bold>false</bold>
+          </font>
+         </property>
+         <property name="styleSheet">
+          <string notr="true">background-color: rgb(209, 207, 192);</string>
+         </property>
+         <property name="text">
+          <string>DESABONAR</string>
+         </property>
+        </widget>
        </widget>
        <widget class="QLabel" name="cantidad_cupo_19">
         <property name="geometry">
@@ -2609,6 +2643,31 @@ background-color: rgb(98, 77, 240);</string>
          </property>
         </widget>
        </widget>
+       <widget class="QPushButton" name="boton_reiniciar_limon_2">
+        <property name="geometry">
+         <rect>
+          <x>560</x>
+          <y>240</y>
+          <width>351</width>
+          <height>31</height>
+         </rect>
+        </property>
+        <property name="font">
+         <font>
+          <family>Roboto</family>
+          <pointsize>8</pointsize>
+          <weight>50</weight>
+          <italic>false</italic>
+          <bold>false</bold>
+         </font>
+        </property>
+        <property name="styleSheet">
+         <string notr="true">background-color: rgb(236, 201, 199)</string>
+        </property>
+        <property name="text">
+         <string>REINICIAR LA PRODUCCION </string>
+        </property>
+       </widget>
        <zorder>cantidad_cupo_19</zorder>
        <zorder>cantidad_cupo_2</zorder>
        <zorder>frame_5</zorder>
@@ -2619,6 +2678,7 @@ background-color: rgb(98, 77, 240);</string>
        <zorder>frame_3</zorder>
        <zorder>cantidad_cupo_8</zorder>
        <zorder>frame_9</zorder>
+       <zorder>boton_reiniciar_limon_2</zorder>
       </widget>
       <widget class="QWidget" name="teb_alimento">
        <attribute name="title">
@@ -8469,7 +8529,7 @@ background-color: rgb(98, 77, 240);</string>
         <rect>
          <x>220</x>
          <y>20</y>
-         <width>191</width>
+         <width>111</width>
          <height>41</height>
         </rect>
        </property>
@@ -8486,7 +8546,32 @@ background-color: rgb(98, 77, 240);</string>
         <string notr="true">background-color: rgb(209, 207, 192);</string>
        </property>
        <property name="text">
-        <string>ENVIAR</string>
+        <string>ABONAR</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="boton_abonar_3">
+       <property name="geometry">
+        <rect>
+         <x>340</x>
+         <y>20</y>
+         <width>101</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Roboto</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(209, 207, 192);</string>
+       </property>
+       <property name="text">
+        <string>DESABONAR</string>
        </property>
       </widget>
      </widget>
@@ -8903,7 +8988,7 @@ color: rgb(1, 72, 138);
 font: 11pt &quot;Roboto&quot;;</string>
       </property>
       <property name="text">
-       <string>COMPRA DE ALIMENTO</string>
+       <string>COMPRA A CREDITO DE ALIMENTO</string>
       </property>
       <property name="alignment">
        <set>Qt::AlignCenter</set>
@@ -9329,7 +9414,7 @@ background-color: rgb(98, 77, 240);</string>
         <rect>
          <x>220</x>
          <y>20</y>
-         <width>191</width>
+         <width>101</width>
          <height>41</height>
         </rect>
        </property>
@@ -9346,7 +9431,32 @@ background-color: rgb(98, 77, 240);</string>
         <string notr="true">background-color: rgb(209, 207, 192);</string>
        </property>
        <property name="text">
-        <string>ENVIAR</string>
+        <string>ABONAR</string>
+       </property>
+      </widget>
+      <widget class="QPushButton" name="boton_abonar_4">
+       <property name="geometry">
+        <rect>
+         <x>330</x>
+         <y>20</y>
+         <width>111</width>
+         <height>41</height>
+        </rect>
+       </property>
+       <property name="font">
+        <font>
+         <family>Roboto</family>
+         <pointsize>11</pointsize>
+         <weight>50</weight>
+         <italic>false</italic>
+         <bold>false</bold>
+        </font>
+       </property>
+       <property name="styleSheet">
+        <string notr="true">background-color: rgb(209, 207, 192);</string>
+       </property>
+       <property name="text">
+        <string>DESABONAR</string>
        </property>
       </widget>
      </widget>
