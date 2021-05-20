@@ -1,4 +1,5 @@
 import sys
+import math 
 sys.path.append(".")
 
 from .archivos import escribir_cuentas, obtener_cuentas_productos
@@ -38,9 +39,9 @@ def enviar_banco_pollos(cantidad):
     escribir_cuentas('pollos','egreso',-cantidad,motivo)
 
 def venta_produccion_pollos(cantidad,precio):
-    valor = cantidad*precio
+    valor = math.trunc(round(cantidad*precio,0))
     motivo = f' Venta de {cantidad} kilos de pollo a {precio} pesos, total {valor} pesos'
-    escribir_cuentas('pollos','ingreso',valor,motivo)
+    escribir_cuentas('pollos','ingreso',int(valor),motivo)
 
 def cantidad_pollos_vivos():
     return cantidad_producto('pollos')

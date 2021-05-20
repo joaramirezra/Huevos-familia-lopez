@@ -2,16 +2,20 @@ import sys
 sys.path.append(".")
 from .archivos import escribir_inventario,escribir_cuentas
 from .archivos import obtener_inventario_productos,cantidad_producto
-from .archivos import obtener_cuentas_productos
+from .archivos import obtener_cuentas_productos,reiniciar_cuentas_producto
 from .produccion import obtener_inventario_huevos_diario,tipos_huevo
+from .archivos import reiniciar_inventario_producto
 
 transacciones = ['ingreso','egreso']
-productos = ['alimento_gallinas','empaques','otros','banco',
-             'gallinas','agropaisa_gallinas','san_alejo_gallinas']
+# productos = ['alimento_gallinas','empaques','otros','banco',
+#              'gallinas','agropaisa_gallinas','san_alejo_gallinas']
 
+productos = ['alimento_gallinas','empaques','gallinas',
+             'Agropaisa_gallinas','San alejo_gallinas']
              
 val_efectivo = ['alimento_gallinas','empaques','otros','banco',
                 'gallinas']+tipos_huevo
+
 productos += tipos_huevo
 
 
@@ -98,6 +102,11 @@ def abono_credito_gallinas(valor,entidad):
     escribir_cuentas('gallinas','egreso' ,-valor ,motivo )
     escribir_cuentas(entidad,'egreso' ,-valor ,motivo )
     
+def desabono_credito_gallinas(valor,entidad):
+    motivo = f'Abono  de {valor} pesos a {entidad}'
+    escribir_cuentas('gallinas','ingreso' ,valor ,motivo )
+    escribir_cuentas(entidad,'ingreso' ,valor ,motivo )
+
 #-------------------------------------------------------------------------------
 def venta_empaques(cantidad ,precio):
     valor = cantidad*precio
@@ -144,3 +153,8 @@ def valor_deuda_gallinas(entidad):
 def transaccion_gallinas():
     columnas = ['fecha','cantidad','motivo']
     return obtener_cuentas_productos(['gallinas'])[columnas].tail(7)
+
+def reiniciar_produccion_gallinas():
+    for producto in productos:
+        reiniciar_cuentas_producto(producto)
+        reiniciar_inventario_producto(producto)

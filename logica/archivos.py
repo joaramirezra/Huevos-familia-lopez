@@ -86,4 +86,6 @@ def reiniciar_inventario_producto(producto):
     df.to_csv('./files/inventario.csv',sep = ';', index = False)
 
 # reiniciar_inventario()
+
 # reiniciar_cuentas()
+
