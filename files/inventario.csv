@@ -1,2 +1,11 @@
 fecha;producto;transaccion;cantidad;motivo
-19/05/2021;A;ingreso;0;Produccion de 0 huevos tipo A
+25/05/2021;alimento_pollos;ingreso;5;credito de 5 de bultos 
+25/05/2021;alimento_pollos;ingreso;4;compra de 4 de bultos 
+25/05/2021;alimento_pollos;egreso;-3;Gasto de 3 bultos de alimento
+25/05/2021;A;ingreso;0;Produccion de 0 huevos tipo A
+25/05/2021;pollos;ingreso;2000;compra de 2000 pollos V/U 50 pesos , total 100000 pesos
+25/05/2021;pollos;egreso;-1000;muerte de 1000 pollos
+25/05/2021;PIPO;ingreso;300;Produccion de 300 huevos tipo PIPO
+25/05/2021;gallinas;ingreso;600;adquisicion de 600 gallinas 
+25/05/2021;pollos;egreso;-500;muerte de 500 pollos
+25/05/2021;AAA;egreso;300;devolucion de 300 huevos, debido a devolucion doña juana

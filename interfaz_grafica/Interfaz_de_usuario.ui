@@ -65,7 +65,7 @@ selection-background-color: rgb(138, 226, 52);</string>
      <enum>QTabWidget::Rounded</enum>
     </property>
     <property name="currentIndex">
-     <number>2</number>
+     <number>7</number>
     </property>
     <property name="iconSize">
      <size>
@@ -4715,8 +4715,8 @@ color: rgb(204, 0, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">font: 11pt &quot;Roboto&quot;;
-color: rgb(238, 238, 236);
-background-color: rgb(98, 77, 240);</string>
+color: rgb(0, 0, 0);
+background-color: rgb(216, 238, 19);</string>
           </property>
           <property name="text">
            <string>SALDO</string>
@@ -5149,8 +5149,8 @@ color: rgb(204, 0, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">font: 11pt &quot;Roboto&quot;;
-color: rgb(238, 238, 236);
-background-color: rgb(98, 77, 240);</string>
+color: rgb(0, 0, 0);
+background-color: rgb(216, 238, 19);</string>
           </property>
           <property name="text">
            <string>SALDO</string>
@@ -6691,8 +6691,8 @@ color: rgb(204, 0, 0);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">font: 11pt &quot;Roboto&quot;;
-color: rgb(238, 238, 236);
-background-color: rgb(98, 77, 240);</string>
+color: rgb(0, 0, 0);
+background-color: rgb(216, 238, 19);</string>
           </property>
           <property name="text">
            <string>SALDO</string>
@@ -7450,8 +7450,8 @@ background-color: rgb(98, 77, 240);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">font: 11pt &quot;Roboto&quot;;
-color: rgb(238, 238, 236);
-background-color: rgb(98, 77, 240);</string>
+color: rgb(0, 0, 0);
+background-color: rgb(216, 238, 19);</string>
           </property>
           <property name="text">
            <string>SALDO (EFECTIVO)</string>
@@ -8146,7 +8146,7 @@ background-color: rgb(98, 77, 240);</string>
         <string notr="true">background-color: rgb(209, 207, 192);</string>
        </property>
        <property name="text">
-        <string>ENVIAR</string>
+        <string>INGRESAR</string>
        </property>
       </widget>
      </widget>
@@ -8707,8 +8707,8 @@ background-color: rgb(76, 192, 182);</string>
           </property>
           <property name="styleSheet">
            <string notr="true">font: 11pt &quot;Roboto&quot;;
-color: rgb(238, 238, 236);
-background-color: rgb(98, 77, 240);</string>
+color: rgb(0, 0, 0);
+background-color: rgb(216, 238, 19);</string>
           </property>
           <property name="text">
            <string>EFECTIVO</string>

@@ -1,1 +1,8 @@
 fecha;producto;transaccion;cantidad;motivo
+25/05/2021;pollos;ingreso;1000000;Apoyo a la caja por valor de 1000000 PESOS
+25/05/2021;pollos;egreso;-50000;gasto de 50000 pesos con motivo de : vitaminas 
+25/05/2021;San alejo_pollos;ingreso;50000;credito de 5 bultos a 10000 pesos, valor total 50000 pesos
+25/05/2021;pollos;egreso;-40000;compra de 4 bultos a 10000 pesos, valor total 40000 pesos
+25/05/2021;pollos;ingreso;280500; Venta de 25.5 kilos de pollo a 11000 pesos, total 280500 pesos
+25/05/2021;pollos;egreso;-100000;compra de 2000 pollos V/U 50 pesos , total 100000 pesos
+25/05/2021;AAA;egreso;-85000;devolucion de 10 CUBETAS con valor  de 85000
