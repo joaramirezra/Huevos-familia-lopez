@@ -2086,8 +2086,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_159.setFont(font)
         self.label_159.setStyleSheet("font: 11pt \"Roboto\";\n"
-"color: rgb(238, 238, 236);\n"
-"background-color: rgb(98, 77, 240);")
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(216, 238, 19);")
         self.label_159.setAlignment(QtCore.Qt.AlignCenter)
         self.label_159.setObjectName("label_159")
         self.horizontalLayout_21.addWidget(self.label_159)
@@ -2300,8 +2300,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_75.setFont(font)
         self.label_75.setStyleSheet("font: 11pt \"Roboto\";\n"
-"color: rgb(238, 238, 236);\n"
-"background-color: rgb(98, 77, 240);")
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(216, 238, 19);")
         self.label_75.setAlignment(QtCore.Qt.AlignCenter)
         self.label_75.setObjectName("label_75")
         self.horizontalLayout_13.addWidget(self.label_75)
@@ -2976,8 +2976,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_77.setFont(font)
         self.label_77.setStyleSheet("font: 11pt \"Roboto\";\n"
-"color: rgb(238, 238, 236);\n"
-"background-color: rgb(98, 77, 240);")
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(216, 238, 19);")
         self.label_77.setAlignment(QtCore.Qt.AlignCenter)
         self.label_77.setObjectName("label_77")
         self.horizontalLayout_24.addWidget(self.label_77)
@@ -3339,8 +3339,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_170.setFont(font)
         self.label_170.setStyleSheet("font: 11pt \"Roboto\";\n"
-"color: rgb(238, 238, 236);\n"
-"background-color: rgb(98, 77, 240);")
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(216, 238, 19);")
         self.label_170.setAlignment(QtCore.Qt.AlignCenter)
         self.label_170.setObjectName("label_170")
         self.horizontalLayout_28.addWidget(self.label_170)
@@ -3919,8 +3919,8 @@ class Ui_MainWindow(object):
         font.setWeight(50)
         self.label_173.setFont(font)
         self.label_173.setStyleSheet("font: 11pt \"Roboto\";\n"
-"color: rgb(238, 238, 236);\n"
-"background-color: rgb(98, 77, 240);")
+"color: rgb(0, 0, 0);\n"
+"background-color: rgb(216, 238, 19);")
         self.label_173.setAlignment(QtCore.Qt.AlignCenter)
         self.label_173.setObjectName("label_173")
         self.horizontalLayout_29.addWidget(self.label_173)
@@ -4264,7 +4264,7 @@ class Ui_MainWindow(object):
         MainWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(MainWindow)
-        self.tabs.setCurrentIndex(2)
+        self.tabs.setCurrentIndex(7)
         self.tabs_internas.setCurrentIndex(0)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -5217,7 +5217,7 @@ class Ui_MainWindow(object):
         self.boton_vender_pollos.setText(_translate("MainWindow", "VENDER"))
         self.cantidad_cupo_22.setText(_translate("MainWindow", "APOYO CAJA MENOR"))
         self.label_91.setText(_translate("MainWindow", "CANTIDAD"))
-        self.boton_invertir_caja_menor_4.setText(_translate("MainWindow", "ENVIAR"))
+        self.boton_invertir_caja_menor_4.setText(_translate("MainWindow", "INGRESAR"))
         self.cantidad_cupo_27.setText(_translate("MainWindow", "ENVIAR AL BANCO"))
         self.label_92.setText(_translate("MainWindow", "VALOR"))
         self.boton_invertir_caja_menor_5.setText(_translate("MainWindow", "ENVIAR"))

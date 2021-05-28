@@ -782,7 +782,7 @@ class Hello_world(Ui_MainWindow):
         pollos_vivos = cantidad_pollos_vivos()
         mortalidad = calcular_mortalidad()
         self.cantidad_pollos_galpon.setText(str(pollos_vivos))
-        self.indice_mortalidad_pollos.setText(str(round(mortalidad,2)))
+        self.indice_mortalidad_pollos.setText(str(round(1-mortalidad,2)*100))
 
 #-------------------------------------------------------------------------------
     def actualizar_alimento_pollos(self):
