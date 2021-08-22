@@ -43,7 +43,7 @@ los ultimos 3 requerimientos se recomienda realizar su instalacion por medio del
 
 # Derechos reservados 
 Creative Commons 2021
-
+2022
 # Uso 
 
 ![](imagenes_readme/produccion.png)
