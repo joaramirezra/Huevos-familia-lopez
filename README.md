@@ -1,5 +1,5 @@
 
-<center>  Huevos-familia-lopez<\center>
+<center>  Huevos familia lopez<\center>
  
 <img src="./imagenes_readme/caja_menor.png"
      alt="Imagen inicial"
