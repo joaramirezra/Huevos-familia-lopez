@@ -12,9 +12,7 @@ from logica.cacao import *
 from logica.fletes import *
 from logica.caja_pollos import * 
 from logica.alimento_pollos import *
-
-
-from interfaz_grafica.Interfaz_de_usuario import Ui_MainWindow
+from interfaz_grafica.interfaz_de_usuario import Ui_MainWindow
 
 convertir_pesos = lambda x : f'{int(x):,.0f} PESOS'
 

@@ -6,6 +6,7 @@ from .caja_pollos import obtener_cuentas_productos
 from .archivos import escribir_cuentas
 from .archivos import reiniciar_cuentas_producto
 from .archivos import reiniciar_inventario_producto
+
 def cantidad_bultos_pollos():
     return cantidad_producto('alimento_pollos')
 
