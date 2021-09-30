@@ -1,8 +1,25 @@
 fecha;producto;transaccion;cantidad;motivo
-25/05/2021;pollos;ingreso;1000000;Apoyo a la caja por valor de 1000000 PESOS
-25/05/2021;pollos;egreso;-50000;gasto de 50000 pesos con motivo de : vitaminas 
-25/05/2021;San alejo_pollos;ingreso;50000;credito de 5 bultos a 10000 pesos, valor total 50000 pesos
-25/05/2021;pollos;egreso;-40000;compra de 4 bultos a 10000 pesos, valor total 40000 pesos
-25/05/2021;pollos;ingreso;280500; Venta de 25.5 kilos de pollo a 11000 pesos, total 280500 pesos
-25/05/2021;pollos;egreso;-100000;compra de 2000 pollos V/U 50 pesos , total 100000 pesos
-25/05/2021;AAA;egreso;-85000;devolucion de 10 CUBETAS con valor  de 85000
+29/09/2021;AAA;ingreso;34000;venta de 4 CUBETAS con valor total de 34000
+29/09/2021;BLANCO;ingreso;18000;venta de 1 CUBETAS con valor total de 18000
+29/09/2021;AAA;ingreso;500;venta de 1 SOBRANTES con valor total de 500
+29/09/2021;Agropaisa_gallinas;ingreso;100000;credito de 1 bultos con valor total de 100000
+29/09/2021;gallinas;egreso;-5000;compra de 1 bultos con valor total de 5000
+29/09/2021;Agropaisa_gallinas;ingreso;50000;endeudamiento de pago vitaminas con valor de 50000 pesos
+29/09/2021;gallinas;ingreso;5000000;Apoyo de 5000000 pesos a caja menor
+29/09/2021;gallinas;egreso;-150000;Abono  de 150000 pesos a Agropaisa_gallinas
+29/09/2021;Agropaisa_gallinas;egreso;-150000;Abono  de 150000 pesos a Agropaisa_gallinas
+29/09/2021;gallinas;egreso;-2000000;Consignacion de 2000000 desde la caja menor
+29/09/2021;limon;ingreso;175000;Venta de 5 canastillas de limon por 175000 PESOS, observacio : 
+29/09/2021;limon;egreso;75000;Gasto de  75000 PESOS , concepto : fertilizante
+29/09/2021;cacao;ingreso;68000;Venta de 5 kilos de cacao por 68000 PESOS, observacion : a don gracelino
+29/09/2021;cacao;egreso;50000;Gasto de  50000 PESOS , concepto : transporte cacao a bogota
+29/09/2021;pollos;egreso;-42500;compra de 50 pollos V/U 850 pesos , total 42500 pesos
+29/09/2021;pollos;egreso;-37500;compra de 50 pollos V/U 750 pesos , total 37500 pesos
+29/09/2021;pollos;ingreso;1200000;Apoyo a la caja por valor de 1200000 PESOS
+29/09/2021;pollos;egreso;-120000;gasto de 120000 pesos con motivo de : vitaminas 
+29/09/2021;Agropaisa_pollos;ingreso;92500;credito de 5 bultos a 18500 pesos, valor total 92500 pesos
+29/09/2021;pollos;egreso;-500000;compra de 10 bultos a 50000 pesos, valor total 500000 pesos
+29/09/2021;pollos;egreso;-92500;abono de 92500 pesos a Agropaisa_pollos
+29/09/2021;Agropaisa_pollos;egreso;-92500;abono de 92500 pesos a Agropaisa_pollos
+29/09/2021;pollos;egreso;-200000;Se enviarion 200000 pesos al banco
+29/09/2021;pollos;ingreso;6375000; Venta de 850.0 kilos de pollo a 7500 pesos, total 6375000 pesos
